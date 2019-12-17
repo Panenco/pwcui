@@ -57,6 +57,7 @@ interface Props {
   className?: string,
   icon: any,
   style?: any,
+  disabled?: boolean,
 }
 
 export const Icon: React.FunctionComponent<Props> & { icons: any } = (props: Props) => {

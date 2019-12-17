@@ -1,17 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import * as React from 'react';
 import Dropzone from 'react-dropzone';
-import cx from 'classnames';
+import * as cx_ from 'classnames';
 import { Text, Icon } from 'index';
 
+const cx = cx_;
 import s from './styles.scss';
 
-class FileInput extends React.Component {
+interface Props {
+  className?: string,
+  icon?: any,
+  accept?: any,
+  name: string,
+  setFieldValue: (name: string, value: any) => void,
+  title?: string,
+  id?: string,
+  value: any,
+  disabled?: boolean,
+}
+
+class FileInput extends React.Component<Props, { rejected: any }> {
   state = {
     rejected: false,
   };
 
-  onDrop = (accepted, rejected) => {
+  onDrop = (accepted: any, rejected: any) => {
     const { name, setFieldValue, title, id } = this.props;
     this.setState({
       rejected: false,
@@ -29,13 +41,13 @@ class FileInput extends React.Component {
     }
   };
 
-  onDelete = deleteFile => {
+  onDelete = (deleteFile: any) => {
     const { value, setFieldValue, name } = this.props;
     const newFiles = value.filter(file => file !== deleteFile);
     setFieldValue(name, newFiles);
   };
 
-  getColor = (isDragActive, rejected) => {
+  getColor = (isDragActive: any, rejected: any) => {
     if (isDragActive) {
       return Text.color.black;
     }
@@ -45,7 +57,7 @@ class FileInput extends React.Component {
     return Text.color.darkgrey;
   };
 
-  getText = (isDragActive, rejected) => {
+  getText = (isDragActive: any, rejected: any) => {
     if (isDragActive) {
       return 'Drop your file here';
     }
@@ -103,31 +115,5 @@ class FileInput extends React.Component {
     );
   }
 }
-
-FileInput.defaultProps = {
-  style: null,
-  inputStyle: s.editFormOuterLogoImg,
-  className: null,
-  accept: null,
-  icon: Icon.icons.undefinedFileType,
-  title: null,
-  id: null,
-};
-
-FileInput.propTypes = {
-  /* eslint-disable-next-line */
-  style: PropTypes.object,
-  /* eslint-disable-next-line */
-  inputStyle: PropTypes.object,
-  className: PropTypes.string,
-  accept: PropTypes.string,
-  setFieldValue: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  fieldName: PropTypes.string.isRequired,
-  value: PropTypes.instanceOf(File).isRequired,
-  icon: PropTypes.oneOf(Icon.icons),
-  title: PropTypes.string,
-  id: PropTypes.string,
-};
 
 export { FileInput };

@@ -89,10 +89,10 @@ export const SearchDecorator = decorator('Forms', ButtonDocs, ButtonReadme).add(
   </>
 ));
 
-// export const FileDecorator = decorator('Forms', ButtonDocs, ButtonReadme).add('File Input', () => (
-//   <>
-//     <Row>
-//       <FileInput accept="application/pdf" icon={Icon.icons.pdf} />
-//     </Row>
-//   </>
-// ));
+export const FileDecorator = decorator('Forms', ButtonDocs, ButtonReadme).add('File Input', () => (
+  <>
+    <Row>
+      <FileInput accept="application/pdf" icon={Icon.icons.pdf} />
+    </Row>
+  </>
+));
