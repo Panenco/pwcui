@@ -1,0 +1,19 @@
+@import 'core';
+
+.multiSelect {
+  display: flex;
+  flex-wrap: wrap;
+
+  &Dropdown {
+    color: $maroon;
+    height: 8px;
+    overflow: initial;
+    width: 8px;
+  }
+
+  &Clear {
+    // color: $maroon;
+    height: 8px;
+    width: 8px;
+  }
+}

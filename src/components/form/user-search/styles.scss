@@ -1,0 +1,51 @@
+@import 'core';
+
+input {
+  @include font($l, $normal, $primary);
+}
+.select {
+  display: flex;
+  flex-wrap: wrap;
+
+  &Dropdown {
+    color: $maroon;
+    height: 8px;
+    overflow: initial;
+    width: 8px;
+  }
+
+  &Clear {
+    // color: $maroon;
+    height: 8px;
+    width: 8px;
+  }
+
+  &Link {
+    font-size: 14px;
+    margin-left: 3px;
+  }
+
+  &User {
+    align-items: flex-start;
+    display: flex;
+    padding: 8px 0;
+
+    &Info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      &Text {
+        margin-bottom: 4px;
+      }
+    }
+
+    &Photo {
+      background-color: $dark-grey;
+      border-radius: 50%;
+      height: 36px;
+      margin-right: 8px;
+      width: 36px;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+//colors
+$black: #404041;
+$focus: #008dff;
+$dark-grey: #6d6e71;
+$light-grey: #f2f2f2;
+$white: #fff;
+$orange: #d04a02;
+$red: #e0301e;
+$rose: #d93954;
+$burgundy: #a32020;
+$maroon: #602320;
+$grey: #736b53;
+$success: #6dbc54;
+
+$colors: (
+  success: $success,
+  black: $black,
+  focus: $focus,
+  darkgrey: $dark-grey,
+  lightgrey: $light-grey,
+  white: $white,
+  orange: $orange,
+  red: $red,
+  rose: $rose,
+  burgundy: $burgundy,
+  maroon: $maroon,
+  grey: $grey,
+);
+
+:export {
+  black: $black;
+  burgundy: $burgundy;
+  darkgrey: $dark-grey;
+  focus: $focus;
+  grey: $grey;
+  lightgrey: $light-grey;
+  maroon: $maroon;
+  orange: $orange;
+  red: $red;
+  rose: $rose;
+  success: $success;
+  white: $white;
+}

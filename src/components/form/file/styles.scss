@@ -1,0 +1,46 @@
+@import 'core';
+
+.dropzone {
+  &Empty {
+    background-color: $light-grey;
+    border: 1px dashed $dark-grey;
+    cursor: pointer;
+    width: 100%;
+
+    &Active {
+      background-color: #ccc;
+    }
+
+    &Rejected {
+      border: 1px dashed $red;
+      color: $orange;
+    }
+
+    &Content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 70px 0 40px 0;
+
+      &Text {
+        height: 72px;
+        width: 200px;
+      }
+
+      &Icon {
+        width: 66px;
+        height: 82px;
+        margin-bottom: 25px;
+        color: $dark-grey;
+
+        &Active {
+          color: $black;
+        }
+
+        &Rejected {
+          color: $red;
+        }
+      }
+    }
+  }
+}

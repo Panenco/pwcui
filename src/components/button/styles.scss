@@ -1,0 +1,94 @@
+@import 'core';
+
+.button {
+  background-color: $light-grey;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  padding: 16px 24px;
+
+  @include font($xs, $medium, $black, 'Arial');
+
+  &:hover {
+    background-color: $dark-grey;
+    color: $white;
+  }
+
+  &:active {
+    background-color: $black;
+    color: $white;
+    outline: none;
+  }
+
+  &Small {
+    font-size: $xs;
+  }
+
+  &Primary {
+    background-color: $red;
+    color: $white;
+
+    &:hover {
+      background-color: $burgundy;
+    }
+
+    &:active {
+      background-color: $burgundy;
+    }
+
+    &Small {
+      font-size: $xs;
+      padding: 7px 30px;
+    }
+  }
+
+  &Underlined {
+    border-bottom: 1px solid $black;
+    display: inline-block;
+
+    @include font($s, $normal, $black);
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-bottom: 1px solid $red;
+      color: $red;
+    }
+
+    &:hover > span,
+    &:focus > span,
+    &:active > span {
+      color: $red;
+    }
+  }
+
+  &Secondary {
+    background-color: $white;
+    border: 1px solid $dark-grey;
+    color: $black;
+
+    &:hover {
+      background-color: $dark-grey;
+      border: 1px solid transparent;
+      color: $white;
+    }
+
+    &:active {
+      background-color: $black;
+      border: 1px solid transparent;
+      color: $white;
+    }
+
+    &Small {
+      font-size: $xs;
+      padding: 7px 30px;
+    }
+  }
+
+  &Disabled {
+    opacity: 0.3;
+    pointer-events: none !important;
+  }
+}

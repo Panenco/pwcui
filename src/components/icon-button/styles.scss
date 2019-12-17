@@ -1,0 +1,30 @@
+@import 'core';
+
+.button {
+  align-items: center;
+  background-color: $light-grey;
+  border: 1px solid $dark-grey;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  line-height: 1;
+  min-width: 100px;
+  padding: 12px 15px;
+
+  @include font($xs, $normal, $black, 'Arial');
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none !important;
+  }
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+
+  &:active {
+    background-color: $black;
+    color: $white;
+  }
+}

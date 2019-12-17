@@ -1,0 +1,12 @@
+$normal: normal;
+$medium: bold;
+
+$weights: (
+  normal: $normal,
+  medium: $medium,
+);
+
+:export {
+  medium: $medium;
+  normal: $normal;
+}

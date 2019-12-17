@@ -1,0 +1,90 @@
+@import 'core';
+
+.button {
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  cursor: pointer;
+  line-height: 1;
+  outline: none;
+  padding: 9px;
+  text-align: center;
+  text-decoration: none;
+
+  &Icon {
+    height: 16px;
+    vertical-align: middle;
+    width: 16px;
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  &:focus {
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+
+  &:active {
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &Primary {
+    &:hover {
+      background-color: $light-grey;
+    }
+
+    &:focus {
+      background-color: $light-grey;
+    }
+
+    &:active {
+      background-color: $dark-grey;
+      border: 1px solid transparent;
+    }
+  }
+
+  &Secondary {
+    &Icon {
+      color: $red;
+    }
+
+    &:hover {
+      background-color: $light-grey;
+    }
+
+    &:focus {
+      background-color: $light-grey;
+      border: 1px solid $focus;
+    }
+
+    &:active {
+      background-color: $rose;
+      border: 1px solid transparent;
+    }
+  }
+
+  &Tertiary {
+    &:hover {
+      background-color: transparent;
+    }
+
+    &:focus {
+      background-color: transparent;
+      border: 1px solid transparent;
+    }
+
+    &:active {
+      background-color: transparent;
+      border: 1px solid transparent;
+    }
+  }
+}

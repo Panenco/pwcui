@@ -1,0 +1,48 @@
+@import 'core';
+
+.input {
+  @include font($s, $normal, $black, $dark-grey);
+
+  border: 1px solid $dark-grey;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  width: 100%;
+
+  &:focus {
+    outline: 3px solid $focus;
+  }
+
+  &:disabled {
+    background-color: $light-grey;
+    border: 1px solid $light-grey;
+  }
+
+  &::placeholder {
+    @include font($s, $normal, $dark-grey, $dark-grey);
+  }
+
+  &Wrapper {
+    position: relative;
+
+    &Error {
+      &::after {
+        background-color: $red;
+        border-radius: 50%;
+        content: '!';
+        height: 20px;
+        line-height: 20px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 20px;
+
+        @include font($s, $medium, $white, $dark-grey);
+      }
+    }
+  }
+
+  &Error {
+    border: 2px solid $red;
+    position: relative;
+  }
+}

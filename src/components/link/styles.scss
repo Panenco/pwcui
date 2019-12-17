@@ -1,0 +1,135 @@
+@import 'core';
+
+.link {
+  border-bottom: 1px solid $black;
+  display: inline-block;
+
+  @include font($s, $normal, $black);
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-bottom: 1px solid $red;
+    color: $red;
+  }
+
+  &:hover > span,
+  &:focus > span,
+  &:active > span {
+    color: $red;
+  }
+
+  &Icon {
+    align-items: center;
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+
+    &:hover {
+      border-bottom: none;
+    }
+
+    &:focus {
+      border-bottom: none;
+    }
+
+    &:active {
+      border-bottom: none;
+    }
+  }
+
+  &Disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &Secondary {
+    border-bottom: 1px solid $red;
+
+    @include font($m, $normal, $red);
+
+    &:hover {
+      border-bottom: 1px dashed $light-grey;
+    }
+
+    &:active {
+      border-bottom: 1px dashed $rose;
+      color: $rose;
+      outline: none;
+      text-decoration-color: $rose;
+    }
+  }
+}
+
+.button {
+  background-color: $light-grey;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  padding: 16px 24px;
+
+  @include font($xs, $medium, $black, 'Arial');
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none !important;
+  }
+
+  &:hover {
+    background-color: $dark-grey;
+    color: $white;
+  }
+
+  &:active {
+    background-color: $black;
+    color: $white;
+    outline: none;
+  }
+
+  &Small {
+    font-size: $xs;
+  }
+
+  &Primary {
+    background-color: $red;
+    color: $white;
+
+    &:hover {
+      background-color: $burgundy;
+    }
+
+    &:active {
+      background-color: $burgundy;
+    }
+
+    &Small {
+      font-size: $xs;
+      padding: 7px 30px;
+    }
+  }
+
+  &Secondary {
+    background-color: $white;
+    border: 1px solid $dark-grey;
+    color: $black;
+
+    &:hover {
+      background-color: $dark-grey;
+      border: 1px solid transparent;
+      color: $white;
+    }
+
+    &:active {
+      background-color: $black;
+      border: 1px solid transparent;
+      color: $white;
+    }
+
+    &Small {
+      font-size: $xs;
+      padding: 7px 30px;
+    }
+  }
+}
