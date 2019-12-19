@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as cx_ from 'classnames';
 import { FileInput, PrimaryButton, SecondaryButton, Text } from 'index';
-import mime from 'mime-types';
+import * as mime from 'mime-types';
 
 const cx = cx_;
 import s from './styles.scss';
