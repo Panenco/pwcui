@@ -1,28 +1,32 @@
-import cx from 'classnames';
-import { FileInput, PrimaryButtonLink, SecondaryButton, Text } from 'index';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import * as React from 'react';
+import * as cx_ from 'classnames';
+import { FileInput, PrimaryButton, SecondaryButton, Text } from 'index';
 import mime from 'mime-types';
 
+const cx = cx_;
 import s from './styles.scss';
 
-const cardPropTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-};
+interface CardProps {
+  className?: string,
+  children: React.ReactNode,
+}
 
-export const Card = ({ className, children, ...props }) => (
+export const Card: React.FunctionComponent<CardProps> = ({ className, children, ...props }: CardProps) => (
   <div className={cx(s.card, className)} {...props}>
     {children}
   </div>
 );
-Card.propTypes = cardPropTypes;
 
-Card.defaultProps = {
-  className: null,
-};
+interface ContentCardProps {
+  className?: string,
+  title: string,
+  subTitle?: string,
+  date?: string,
+  linkPath?: string,
+  linkText?: string,
+}
 
-export const ContentCard = ({ className, title, subTitle, date, linkPath, linkText }) => (
+export const ContentCard: React.FunctionComponent<ContentCardProps> = ({ className, title, subTitle, date, linkPath, linkText }: ContentCardProps) => (
   <Card className={cx(s.cardContent, className)}>
     <Text className={cx(s.cardContentTitle)} size={Text.size.l}>
       {title}
@@ -35,32 +39,31 @@ export const ContentCard = ({ className, title, subTitle, date, linkPath, linkTe
         {date}
       </Text>
     )}
-    <PrimaryButtonLink className={cx(s.cardContentButton)} to={linkPath}>
+    <PrimaryButton component="link" className={cx(s.cardContentButton)} to={linkPath}>
       {linkText}
-    </PrimaryButtonLink>
+    </PrimaryButton>
   </Card>
 );
 
-ContentCard.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string,
-  subTitle: PropTypes.string,
-  date: PropTypes.string,
-  linkPath: PropTypes.string,
-  linkText: PropTypes.string,
-};
-
 ContentCard.defaultProps = {
-  className: null,
-  date: null,
+  className: '',
+  date: '',
   title: 'Card Title',
   subTitle: 'Subtitle',
   linkPath: '/',
   linkText: 'Button link',
 };
 
-export const UploadCard = ({ className, title, value, setFieldValue, name, ...props }) => {
-  const getType = file => {
+interface UploadCardProps {
+  className?: string,
+  title: string,
+  value?: any,
+  setFieldValue: (name: string, value: any) => void,
+  name: string
+}
+
+export const UploadCard: React.FunctionComponent<UploadCardProps> = ({ className, title, value, setFieldValue, name, ...props }: UploadCardProps) => {
+  const getType = (file: { path: string, type: any }) => {
     if (file instanceof File) {
       if (file.path.endsWith('.xbrl') || file.path.endsWith('xbrl')) {
         return 'xbrl';
@@ -110,15 +113,7 @@ export const UploadCard = ({ className, title, value, setFieldValue, name, ...pr
   );
 };
 
-UploadCard.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string,
-  value: PropTypes.instanceOf(File).isRequired,
-  setFieldValue: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-};
-
 UploadCard.defaultProps = {
-  className: null,
+  className: '',
   title: 'Card Title',
 };

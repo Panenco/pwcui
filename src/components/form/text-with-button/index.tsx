@@ -24,29 +24,3 @@ export const TextWithButton: React.FunctionComponent<Props> = ({ className, icon
     </div>
   );
 };
-
-// TextWithButton.defaultProps = {
-//   className: null,
-//   type: 'text',
-//   id: null,
-//   onButtonClick: null,
-//   iconName: 'date',
-//   labelText: 'Text',
-//   name: null,
-//   error: null,
-//   disabled: false,
-//   value: null,
-// };
-//
-// TextWithButton.propTypes = {
-//   error: PropTypes.string,
-//   type: PropTypes.string,
-//   onButtonClick: PropTypes.func,
-//   id: PropTypes.string,
-//   className: PropTypes.string,
-//   iconName: PropTypes.string,
-//   name: PropTypes.string,
-//   labelText: PropTypes.string,
-//   disabled: PropTypes.bool,
-//   value: PropTypes.string,
-// };

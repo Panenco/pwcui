@@ -10,6 +10,9 @@ import LinkDocs from 'components/link/link-DOCS.md';
 
 import IconButtonReadme from 'components/icon-button/icon-button-README.md';
 import IconButtonDocs from 'components/icon-button/icon-button-DOCS.md';
+
+import ButtonIconDocs from 'components/button-icon/button-icon-DOCS.md';
+
 import {
   PrimaryButton,
   SecondaryButton,
@@ -25,8 +28,18 @@ import {
 
 import { decorator } from '../../utils/decorator';
 
+const Wrapper = props => (
+  <div
+    style={{
+      backgroundColor: 'white',
+      padding: '12px',
+    }}
+    {...props}
+  />
+);
+
 export default decorator('Button', ButtonDocs, ButtonReadme).add('Button components', () => (
-  <>
+  <Wrapper>
     <Row>
       <Col s="12">
         <PrimaryButton>Primary Button</PrimaryButton>
@@ -45,12 +58,12 @@ export default decorator('Button', ButtonDocs, ButtonReadme).add('Button compone
         <SecondaryButton disabled>Secondary Disabled</SecondaryButton>
       </Col>
     </Row>
-  </>
+  </Wrapper>
 ));
 
 export const Links = decorator('Button', LinkDocs, LinkReadme).add('Link components', () => (
   <BrowserRouter>
-    <>
+    <Wrapper>
       <Row>
         <Col s="12">
           <PrimaryButton component="link" to="/">Primary Button Link</PrimaryButton>
@@ -103,13 +116,13 @@ export const Links = decorator('Button', LinkDocs, LinkReadme).add('Link compone
           </LinkIcon>
         </Col>
       </Row>
-    </>
+    </Wrapper>
   </BrowserRouter>
 ));
 
-export const ButtonIcons = decorator('Button', IconButtonDocs, IconButtonReadme).add('Button icon components', () => (
+export const ButtonIcons = decorator('Button', ButtonIconDocs, IconButtonReadme).add('Button icon components', () => (
   <BrowserRouter>
-    <>
+    <Wrapper>
       <Row>
         <Col s="12">
           <PrimaryButtonIcon icon={PrimaryButtonIcon.icons.trash} />
@@ -128,17 +141,17 @@ export const ButtonIcons = decorator('Button', IconButtonDocs, IconButtonReadme)
           <PrimaryButtonIcon icon={PrimaryButtonIcon.icons.date} disabled />
         </Col>
       </Row>
-    </>
+    </Wrapper>
   </BrowserRouter>
 ));
 
 export const IconButtons = decorator('Button', IconButtonDocs, IconButtonReadme).add('IconButton components', () => (
   <BrowserRouter>
-    <>
+    <Wrapper>
       <Row>
         <IconButton icon={Icon.icons.chevronDown}>IconButton</IconButton>
         <IconButton icon={Icon.icons.chevronDown} disabled>IconButton Disabled</IconButton>
       </Row>
-    </>
+    </Wrapper>
   </BrowserRouter>
 ));

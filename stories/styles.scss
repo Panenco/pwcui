@@ -26,4 +26,15 @@
   button {
     outline: none;
   }
+
+  svg,
+  symbol {
+    [fill]:not([fill='none']):not([fill^='url(']):not([original]) {
+      fill: currentColor !important;
+    }
+
+    [stroke]:not([stroke='none']):not([stroke^='url(']) {
+      stroke: currentColor !important;
+    }
+  }
 }

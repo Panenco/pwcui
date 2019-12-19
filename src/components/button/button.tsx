@@ -12,6 +12,7 @@ interface Props {
   className?: string,
   component?: 'link',
   to?: string,
+  onClick?: () => void,
 }
 
 export const Button: React.FunctionComponent<Props> = (props: Props): any => {

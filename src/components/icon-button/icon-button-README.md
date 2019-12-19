@@ -3,5 +3,5 @@
 ### Usage
 
 ```js
-import { IconButton } from '@dropzone/ui';
+import { IconButton } from '@panenco/pwcui';
 ```

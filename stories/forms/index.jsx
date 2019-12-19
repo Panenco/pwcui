@@ -3,12 +3,29 @@ import React from 'react';
 import ButtonReadme from 'components/button/button-README.md';
 import ButtonDocs from 'components/button/button-DOCS.md';
 
-import { TextArea, TextInput, SelectInput, Checkbox, Search, Row, Col, TextWithButton, FileInput, Icon } from 'index';
+import TextInputDocs from 'components/form/text/text-DOCS.md';
+import CheckboxDocs from 'components/form/checkbox/checkbox-DOCS.md';
+import RadioDocs from 'components/form/radiobutton/radio-DOCS.md';
+import SelectInputDocs from 'components/form/select/select-DOCS.md';
+import SearchInputDocs from 'components/form/search/search-DOCS.md';
+import FileInputDocs from 'components/form/file/file-DOCS.md';
+
+import { TextArea, TextInput, SelectInput, Checkbox, Search, Row, Col, TextWithButton, FileInput, Icon, Radio } from 'index';
 
 import { decorator } from '../../utils/decorator';
 
-export default decorator('Forms', ButtonDocs, ButtonReadme).add('Input components', () => (
-  <>
+const Wrapper = props => (
+  <div
+    style={{
+      backgroundColor: 'white',
+      padding: '12px',
+    }}
+    {...props}
+  />
+);
+
+export default decorator('Forms', TextInputDocs, ButtonReadme).add('Input components', () => (
+  <Wrapper>
    <Row>
       <Col s="12">
         <TextArea placeholder="Placeholder" />
@@ -44,11 +61,11 @@ export default decorator('Forms', ButtonDocs, ButtonReadme).add('Input component
         <TextWithButton iconName="date" disabled placeholder="Disabled" />
       </Col>
     </Row>
-  </>
+  </Wrapper>
 ));
 
-export const CheckboxDecorator = decorator('Forms', ButtonDocs, ButtonReadme).add('Checkbox', () => (
-  <>
+export const CheckboxDecorator = decorator('Forms', CheckboxDocs, ButtonReadme).add('Checkbox', () => (
+  <Wrapper>
     <Row>
       <Col s="12">
         <Checkbox label="Checkbox" id="check1" />
@@ -63,11 +80,30 @@ export const CheckboxDecorator = decorator('Forms', ButtonDocs, ButtonReadme).ad
         <Checkbox label="Disabled checked" id="check4" checked disabled />
       </Col>
     </Row>
-  </>
+  </Wrapper>
 ));
 
-export const SelectDecorator = decorator('Forms', ButtonDocs, ButtonReadme).add('Select', () => (
-  <>
+export const Radiobutton = decorator('Forms', RadioDocs, ButtonReadme).add('Radiobutton', () => (
+  <Wrapper>
+    <Row>
+      <Col s="12">
+        <Radio label="Radio" id="radio1" />
+      </Col>
+      <Col s="12">
+        <Radio label="Disabled unckecked" id="radio2" disabled />
+      </Col>
+      <Col s="12">
+        <Radio label="Checked Radio" id="radio3" value="radio3" />
+      </Col>
+      <Col s="12">
+        <Radio label="Disabled checked" id="radio4" value="radio4" disabled />
+      </Col>
+    </Row>
+  </Wrapper>
+));
+
+export const SelectDecorator = decorator('Forms', SelectInputDocs, ButtonReadme).add('Select', () => (
+  <Wrapper>
     <Row>
       <Col s="12">
         <SelectInput
@@ -78,21 +114,21 @@ export const SelectDecorator = decorator('Forms', ButtonDocs, ButtonReadme).add(
         <SelectInput isDisabled />
       </Col>
     </Row>
-  </>
+  </Wrapper>
 ));
 
-export const SearchDecorator = decorator('Forms', ButtonDocs, ButtonReadme).add('Search Input', () => (
-  <>
+export const SearchDecorator = decorator('Forms', SearchInputDocs, ButtonReadme).add('Search Input', () => (
+  <Wrapper>
     <Row>
       <Search />
     </Row>
-  </>
+  </Wrapper>
 ));
 
-export const FileDecorator = decorator('Forms', ButtonDocs, ButtonReadme).add('File Input', () => (
-  <>
+export const FileDecorator = decorator('Forms', FileInputDocs, ButtonReadme).add('File Input', () => (
+  <Wrapper>
     <Row>
       <FileInput accept="application/pdf" icon={Icon.icons.pdf} />
     </Row>
-  </>
+  </Wrapper>
 ));

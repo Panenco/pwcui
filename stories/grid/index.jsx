@@ -20,8 +20,18 @@ const Column = () => (
   />
 );
 
+const Wrapper = props => (
+  <div
+    style={{
+      backgroundColor: 'white',
+      padding: '12px',
+    }}
+    {...props}
+  />
+);
+
 export default decorator('Grid', GridDocs, GridReadme).add('Grid component', () => (
-  <>
+  <Wrapper>
     <Row>
       <Col s="6">
         <Column />
@@ -74,5 +84,5 @@ export default decorator('Grid', GridDocs, GridReadme).add('Grid component', () 
         <Column />
       </Col>
     </Row>
-  </>
+  </Wrapper>
 ));

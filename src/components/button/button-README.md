@@ -46,7 +46,7 @@ render() {
 ### Usage
 
 ```js
-import { PrimaryButtonLink, SecondaryButtonLink } from '@dropzone/ui';
+import { PrimaryButtonLink, SecondaryButtonLink } from '@panenco/pwcui';
 
 render() {
   return (

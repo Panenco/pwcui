@@ -3,7 +3,7 @@
 Link component
 
 ```js
-import { PrimaryLink, SecondaryLink } from '@panenco/pwcui';
+import { PrimaryLink, LinkIcon, PrimaryButton, SecondaryButton, Button } from '@panenco/pwcui';
 ```
 
 <!-- STORY -->

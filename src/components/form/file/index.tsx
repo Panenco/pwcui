@@ -14,7 +14,7 @@ interface Props {
   setFieldValue: (name: string, value: any) => void,
   title?: string,
   id?: string,
-  value: any,
+  value?: any,
   disabled?: boolean,
 }
 

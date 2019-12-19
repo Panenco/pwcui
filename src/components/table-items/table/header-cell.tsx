@@ -1,12 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import cx from 'classnames';
+import * as React from 'react';
+import * as cx_ from 'classnames';
 import { Icon } from 'components/icon';
 import { Cell } from './cell';
+
+const cx = cx_;
 import s from './styles.scss';
 
-class HeaderCell extends React.Component {
-  handleSortClick = name => () => {
+interface Props {
+  className?: string,
+  children?: React.ReactNode,
+  isTable?: boolean,
+  name?: string,
+  sort?: any,
+  handleSort: (name: any) => void,
+}
+
+class HeaderCell extends React.Component<Props, {}>  {
+  handleSortClick = (name: string) => () => {
     this.props.handleSort(name);
   };
 
@@ -31,15 +41,7 @@ class HeaderCell extends React.Component {
                 icon={Icon.icons.chevronUp}
                 className={cx(
                   s.tableHeaderCellContentSquareIcon,
-                  asc && s.tableHeaderCellContentSquareIconActive,
-                  !name && s.tableHeaderCellContentSquareHide,
-                )}
-              />
-              <Icon
-                icon={Icon.icons.chevronDown}
-                className={cx(
-                  s.tableHeaderCellContentSquareIcon,
-                  desc && s.tableHeaderCellContentSquareIconActive,
+                  asc && s.tableHeaderCellContentSquareIconDown,
                   !name && s.tableHeaderCellContentSquareHide,
                 )}
               />
@@ -50,15 +52,5 @@ class HeaderCell extends React.Component {
     );
   }
 }
-
-HeaderCell.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
-
-HeaderCell.defaultProps = {
-  className: null,
-  children: null,
-};
 
 export { HeaderCell };

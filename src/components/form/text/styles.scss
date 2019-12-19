@@ -29,7 +29,9 @@
         background-color: $red;
         border-radius: 50%;
         content: '!';
+        display: flex;
         height: 20px;
+        justify-content: center;
         line-height: 20px;
         position: absolute;
         right: 10px;

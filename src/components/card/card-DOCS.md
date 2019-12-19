@@ -3,7 +3,7 @@
 Card component
 
 ```js
-import { Card, ContentCard, UploadCard } from '@dropzone/ui';
+import { Card, ContentCard, UploadCard } from '@panenco/pwcui';
 ```
 
 <!-- STORY -->

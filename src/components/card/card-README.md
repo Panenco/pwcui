@@ -3,7 +3,7 @@
 ### Usage
 
 ```js
-import { Card } from '@dropzone/ui';
+import { Card } from '@panenco/pwcui';
 
 render() {
   return (

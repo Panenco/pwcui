@@ -3,7 +3,7 @@
 ### Usage
 
 ```js
-import Text from '@dropzone/ui';
+import Text from '@panenco/pwcui';
 
 render() {
   return (

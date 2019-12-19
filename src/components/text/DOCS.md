@@ -3,7 +3,7 @@
 Common application text.
 
 ```js
-import Text from '@dropzone/ui';
+import Text from '@panenco/pwcui';
 ```
 
 <!-- STORY -->
