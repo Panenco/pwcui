@@ -24,7 +24,7 @@ const Wrapper = props => (
   <div
     style={{
       backgroundColor: 'white',
-      padding: '12px',
+      marginTop: '30px',
     }}
     {...props}
   />

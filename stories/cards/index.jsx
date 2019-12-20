@@ -14,6 +14,7 @@ const Wrapper = props => (
     style={{
       backgroundColor: '#F2F2F2',
       padding: '12px',
+      marginTop: '30px',
     }}
     {...props}
   />

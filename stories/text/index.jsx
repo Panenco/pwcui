@@ -15,7 +15,7 @@ const Wrapper = props => (
       flexDirection: 'column',
       justifyContent: 'space-between',
       minHeight: '30vh',
-      padding: '12px',
+      marginTop: '30px',
     }}
     {...props}
   />
