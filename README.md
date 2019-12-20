@@ -1,4 +1,4 @@
-# PWC UI library
+# PWC UI library.
 
 ## Add styles
 To add styles, insert `'@panenco/pwcui/lib/styles.css';` into root element.
