@@ -1,7 +1,7 @@
 @import 'core';
 
 .textarea {
-  @include font($m, $normal, $primary);
+  @include font($m, $normal, $black, $secondary);
 
   border: 1px solid $light-grey;
   line-height: 1.3;

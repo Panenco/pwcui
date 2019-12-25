@@ -11,6 +11,7 @@ import GridStory from './grid';
 import CardStory from './cards';
 import IconStory from './icons';
 import TableStory from './table';
+import TabsStory from './tabs';
 // import PopupStory from './popup';
 // import HeaderStory from './header';
 // import ComplexComponentsStory from './complex';
@@ -25,5 +26,6 @@ storiesOf('Form', <FormStory />);
 storiesOf('Card', <CardStory />);
 storiesOf('Icon', <IconStory />);
 storiesOf('Table', <TableStory />);
+storiesOf('Tabs', <TabsStory />)
 // storiesOf('Popup', <PopupStory />);
 // storiesOf('Header', <HeaderStory />);

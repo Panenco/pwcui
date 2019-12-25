@@ -8,6 +8,7 @@ export * from 'components/icon';
 export * from 'components/icon-button';
 export * from 'components/grid';
 export * from 'components/table-items'
+export * from 'components/tabs';
 // export * from 'components/avatar';
 // export * from 'components/color-picker';
 // export * from 'components/table';

@@ -1,0 +1,49 @@
+@import 'core';
+
+.tabs {
+  border-bottom: 2px solid transparent;
+
+  &Item {
+    @include font($xs, $normal, $dark-grey);
+
+    border: 1px solid $dark-grey;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 13px;
+    padding: 13px 24px;
+    white-space: nowrap;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    &:hover {
+      @include font($xs, $normal, $white);
+
+      background-color: $dark-grey;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &Active {
+      @include font($xs, $normal, $white);
+
+      background-color: $dark-grey;
+
+      &::after {
+        background-color: $red;
+        bottom: -12px;
+        content: '';
+        height: 2px;
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+}

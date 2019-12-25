@@ -6,7 +6,7 @@
   line-height: 1;
 
   &Title {
-    @include font($m, $normal, $primary);
+    @include font($xs, $normal, $black, $secondary);
 
     align-items: center;
     cursor: pointer;
@@ -23,11 +23,7 @@
 
   &:hover {
     .container {
-      border: 1px solid $red;
-    }
-
-    .labelTitle {
-      @include font($m, $normal, $red);
+      background-color: $background;
     }
   }
 
@@ -81,8 +77,8 @@
 }
 
 .checkbox:checked + .container {
-  background-color: $red;
-  border: 1px solid $red;
+  background-color: $black;
+  border: 1px solid $black;
 }
 
 .checkbox:checked + .container > .tick {

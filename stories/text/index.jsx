@@ -23,14 +23,14 @@ const Wrapper = props => (
 
 export default decorator('Text', TextDocs, TextReadme).add('Text component', () => (
   <Wrapper>
-    <Text size={Text.size.xxl}>Georgia regular 35 black</Text>
-    <Text size={Text.size.xl}>Georgia regular 28 black</Text>
+    <Text size={Text.size.xxl} font={Text.font.primary}>Georgia regular 35 black</Text>
+    <Text size={Text.size.xl} font={Text.font.primary}>Georgia regular 28 black</Text>
 
-    <Text size={Text.size.l} height={Text.height.xxl}>
+    <Text size={Text.size.l} height={Text.height.xxl} font={Text.font.primary}>
       Georgia regular 24 black 35
     </Text>
-    <Text size={Text.size.l}>Georgia regular 24 black</Text>
-    <Text size={Text.size.m}>Georgia regular 18 black</Text>
+    <Text size={Text.size.l} font={Text.font.primary}>Georgia regular 24 black</Text>
+    <Text size={Text.size.m} font={Text.font.primary}>Georgia regular 18 black</Text>
 
     <Text size={Text.size.s} font={Text.font.secondary}>
       Arial regular 16 black

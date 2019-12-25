@@ -11,7 +11,7 @@
   min-width: 100px;
   padding: 12px 15px;
 
-  @include font($xs, $normal, $black, 'Arial');
+  @include font($xs, $normal, $black, $secondary);
 
   &:disabled {
     opacity: 0.3;

@@ -57,3 +57,7 @@ Text.font = Object.entries(fonts).reduce((obj, [fontName]) => {
   obj[fontName] = s[`textFont__${fontName}`];
   return obj;
 }, {});
+
+Text.defaultProps = {
+  font: Text.font.primary,
+}

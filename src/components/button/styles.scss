@@ -9,7 +9,7 @@
   line-height: 1;
   padding: 16px 24px;
 
-  @include font($xs, $medium, $black, 'Arial');
+  @include font($xs, $medium, $black, $secondary);
 
   &:hover {
     background-color: $dark-grey;
