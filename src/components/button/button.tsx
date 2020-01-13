@@ -45,12 +45,16 @@ export const SecondaryButton: React.FunctionComponent<Props> = (props: Props): a
     </Button>
   );
 }
-//
-// export const UnderlinedButton = ({ type = 'button', className, children, ...props }) => (
-//   <button type={type} className={cx(s.buttonUnderlined, className)} {...props}>
-//     {children}
-//   </button>
-// );
+
+export const UnderlinedButton: React.FunctionComponent<Props> = (props: Props): any => {
+  const { children, disabled = false, className, type = 'button', to = '', component, ...otherProps } = props;
+
+  return (
+    <button type={type} className={cx(s.buttonUnderlined, disabled && s.buttonDisabled, className)} {...otherProps}>
+      {children}
+    </button>
+  );
+}
 //
 // UnderlinedButton.propTypes = buttonPropTypes;
 //

@@ -3,7 +3,7 @@
 Button component
 
 ```js
-import { PrimaryButton, SecondaryButton, Button } from '@panenco/pwcui';
+import { PrimaryButton, SecondaryButton, Button, UnderlinedButton } from '@panenco/pwcui';
 ```
 
 <!-- STORY -->
