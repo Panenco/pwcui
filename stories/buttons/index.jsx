@@ -14,6 +14,7 @@ import IconButtonDocs from 'components/icon-button/icon-button-DOCS.md';
 import ButtonIconDocs from 'components/button-icon/button-icon-DOCS.md';
 
 import {
+  UnderlinedButton,
   PrimaryButton,
   SecondaryButton,
   Button,
@@ -56,6 +57,12 @@ export default decorator('Button', ButtonDocs, ButtonReadme).add('Button compone
       <Col s="12">
         <SecondaryButton>Secondary Button</SecondaryButton>
         <SecondaryButton disabled>Secondary Disabled</SecondaryButton>
+      </Col>
+    </Row>
+    <Row>
+      <Col s="12">
+        <UnderlinedButton>Secondary Button</UnderlinedButton>
+        <UnderlinedButton disabled>Secondary Disabled</UnderlinedButton>
       </Col>
     </Row>
   </Wrapper>
