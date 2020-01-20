@@ -105,6 +105,11 @@ export const Radiobutton = decorator('Forms', RadioDocs, ButtonReadme).add('Radi
 export const SelectDecorator = decorator('Forms', SelectInputDocs, ButtonReadme).add('Select', () => (
   <Wrapper>
     <Row>
+
+      <Col s="12">
+      <TextInput  placeholder="Error" />
+
+      </Col>
       <Col s="12">
         <SelectInput
           options={[{ value: 'First', label: 'First option' }, { value: 'Second', label: 'Second option' }]}

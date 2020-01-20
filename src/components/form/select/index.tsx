@@ -41,7 +41,7 @@ const customStyles = (isDisabled?: boolean) => ({
     cursor: selectProps.menuIsOpen && 'text',
     border: 'none',
     borderRadius: 0,
-    minHeight: 36,
+    minHeight: 46,
   }),
   valueContainer: (base: any) => ({
     ...base,
