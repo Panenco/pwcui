@@ -10,7 +10,7 @@ import SelectInputDocs from 'components/form/select/select-DOCS.md';
 import SearchInputDocs from 'components/form/search/search-DOCS.md';
 import FileInputDocs from 'components/form/file/file-DOCS.md';
 
-import { TextArea, TextInput, SelectInput, Checkbox, Search, Row, Col, TextWithButton, FileInput, Icon, Radio } from 'index';
+import { DayPicker, TextArea, TextInput, SelectInput, Checkbox, Search, Row, Col, TextWithButton, FileInput, Icon, Radio } from 'index';
 
 import { decorator } from '../../utils/decorator';
 
@@ -134,6 +134,14 @@ export const FileDecorator = decorator('Forms', FileInputDocs, ButtonReadme).add
   <Wrapper>
     <Row>
       <FileInput accept="application/pdf" icon={Icon.icons.pdf} />
+    </Row>
+  </Wrapper>
+));
+
+export const DayPickerDecorator = decorator('Forms', FileInputDocs, ButtonReadme).add('DayPicker Input', () => (
+  <Wrapper>
+    <Row>
+      <DayPicker  />
     </Row>
   </Wrapper>
 ));

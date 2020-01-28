@@ -6,3 +6,4 @@ export * from './radiobutton';
 export * from './checkbox';
 export * from './search';
 export * from './select';
+export * from './day-picker';
