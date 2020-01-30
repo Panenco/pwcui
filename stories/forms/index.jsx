@@ -11,7 +11,7 @@ import SearchInputDocs from 'components/form/search/search-DOCS.md';
 import FileInputDocs from 'components/form/file/file-DOCS.md';
 import DropzoneDocs from 'components/form/dropzone/dropzone-DOCS.md';
 
-import { DayPicker, TextArea, TextInput, SelectInput, Checkbox, Search, Row, Col, TextWithButton, FileInput, Dropzone, Icon, Radio } from 'index';
+import { DatePicker, TextArea, TextInput, SelectInput, Checkbox, Search, Row, Col, TextWithButton, FileInput, Dropzone, Icon, Radio } from 'index';
 
 import { decorator } from '../../utils/decorator';
 
@@ -150,7 +150,7 @@ export const DropzoneDecorator = decorator('Forms', DropzoneDocs, ButtonReadme).
 export const DayPickerDecorator = decorator('Forms', FileInputDocs, ButtonReadme).add('DayPicker Input', () => (
   <Wrapper>
     <Row>
-      <DayPicker  />
+      <DatePicker  />
     </Row>
   </Wrapper>
 ));

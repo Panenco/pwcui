@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DayPickerComponent from 'react-day-picker/DayPicker';
+import DayPicker from 'react-day-picker';
 import { Text, Icon, PrimaryButton } from 'index';
 import ReactMaskInput from 'react-text-mask';
 
@@ -19,7 +19,7 @@ interface Props {
   isTime?: boolean,
 };
 
-class DayPicker extends React.Component<Props> {
+class DatePicker extends React.Component<Props> {
 
   static defaultProps = {
     timeLabel: 'Time',
@@ -33,7 +33,7 @@ class DayPicker extends React.Component<Props> {
 
     return (
       <div className={s.dayPicker}>
-        <DayPickerComponent modifiers={modifiers} />
+        <DayPicker modifiers={modifiers} />
         {isTime && <div className={s.dayPickerFooter}>
           <div className={s.dayPickerFooterTime}>
             <Text
@@ -49,9 +49,6 @@ class DayPicker extends React.Component<Props> {
                 className={s.dayPickerFooterInput}
                 mask={[/[0-2]/, /[0-9]/, ':', /[0-5]/, /[0-9]/]}
                 placeholder="--:--"
-                // pipe={createAutoCorrectedDatePipe('HH:MM')}
-                // onChange={this.handleSetTime}
-                // value={time.to}
                 name="to"
               />
               <Icon icon={Icon.icons.clock} className={s.dayPickerFooterIcon} />
@@ -67,4 +64,4 @@ class DayPicker extends React.Component<Props> {
 
 }
 
-export { DayPicker };
+export { DatePicker };
