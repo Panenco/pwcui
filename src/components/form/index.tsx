@@ -1,5 +1,6 @@
 export * from './text';
 export * from './file';
+export * from './dropzone';
 export * from './text-with-button';
 export * from './text-area';
 export * from './radiobutton';

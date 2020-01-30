@@ -6,7 +6,6 @@
   /* DayPicker styles */
 
   .DayPicker {
-    border: 1px solid $border;
     display: block;
     font-size: 1rem;
     position: relative;
@@ -32,7 +31,7 @@
     flex-wrap: wrap;
     justify-content: center;
     min-width: 182px;
-    padding: 16px;
+    padding: 20px;
   }
 
   .DayPicker-Month {
@@ -84,11 +83,12 @@
   .DayPicker-Caption {
     color: $black;
     display: table-caption;
-    top: 80px;
+    margin-bottom: 8px;
     padding: 0 6px;
     text-align: left;
-    @include font($s, $normal, $black, $secondary);
+    top: 80px;
 
+    @include font($s, $normal, $black, $secondary);
   }
 
 
@@ -137,12 +137,16 @@
 
     @include font($xs, $normal, $black, $secondary);
 
+    &:hover,
     &:focus {
-      background-color: $primary !important;
+      background-color: $dark-grey;
       border: none;
-      color: $light-grey;
-      outline: 2px solid $focus !important;
+      color: $white;
       position: relative;
+    }
+
+    &:focus {
+      outline: 2px solid $focus;
     }
   }
 
@@ -256,13 +260,13 @@
     z-index: 1;
   }
 
-  .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-    background-color: $pressed;
-  }
-
-  .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside):not(.DayPicker-Day--today) {
-    color: $primary;
-  }
+  // .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+  //   background-color: $pressed;
+  // }
+  //
+  // .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside):not(.DayPicker-Day--today) {
+  //   color: $primary;
+  // }
 
   .DayPicker-Day--start,
   .DayPicker-Day--end {
@@ -274,5 +278,11 @@
 
   .DayPicker-Day--past, .DayPicker-Weekday {
     @include font($xs, $normal, $dark-grey, $secondary);
+  }
+
+  .DayPicker-Day--selected {
+    background-color: $dark-grey;
+
+    @include font($xs, $medium, $white, $secondary);
   }
 }
