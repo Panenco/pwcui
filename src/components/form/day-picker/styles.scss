@@ -3,7 +3,7 @@
 .day {
 
   &Input {
-    width: 300px;
+    min-width: 300px;
   }
 
   &Picker {
@@ -12,6 +12,7 @@
     border: 1px solid $border;
     display: flex;
     flex-direction: column;
+    position: absolute;
     width: 257px;
 
     &Input {

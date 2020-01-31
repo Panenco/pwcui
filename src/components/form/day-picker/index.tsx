@@ -8,10 +8,13 @@ import s from './styles.scss';
 interface Props {
   className?: string,
   timeLabel?: string,
+  inputValue?: string,
   icon?: any,
   accept?: any,
+  selectedDays?: any,
   name: string,
   setFieldValue: (name: string, value: any) => void,
+  onChange: (value: any) => void,
   title?: string,
   id?: string,
   value?: any,
@@ -28,6 +31,12 @@ class DatePicker extends React.Component<Props, State> {
     isOpen: false,
   };
 
+  componentDidUpdate(prevProps) {
+    if (this.props.selectedDays !== prevProps.selectedDays) {
+      this.openHandler();
+    }
+  }
+
   static defaultProps = {
     timeLabel: 'Time',
     isTime: false,
@@ -42,7 +51,7 @@ class DatePicker extends React.Component<Props, State> {
   render() {
     const modifiers = { past: { before: new Date() } };
 
-    const { isTime, timeLabel } = this.props;
+    const { isTime, timeLabel, inputValue, onChange } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -52,10 +61,15 @@ class DatePicker extends React.Component<Props, State> {
           onClick={this.openHandler}
           className={s.dayInput}
           readonly='readonly'
+          value={inputValue}
         />
         {isOpen ? (
           <div className={s.dayPicker}>
-            <DayPicker modifiers={modifiers} />
+            <DayPicker
+              modifiers={modifiers}
+              onDayClick={onChange}
+              {...this.props}
+            />
             {isTime && <div className={s.dayPickerFooter}>
               <div className={s.dayPickerFooterTime}>
                 <Text

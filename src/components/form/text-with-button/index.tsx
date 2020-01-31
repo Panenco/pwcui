@@ -10,6 +10,7 @@ interface Props {
   className?: string,
   iconName: string,
   name?: string,
+  value?: string,
   readonly?: string,
   disabled?: boolean,
   onButtonClick?: () => void,
