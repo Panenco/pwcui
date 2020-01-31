@@ -31,12 +31,6 @@ class DatePicker extends React.Component<Props, State> {
     isOpen: false,
   };
 
-  componentDidUpdate(prevProps) {
-    if (this.props.selectedDays !== prevProps.selectedDays) {
-      this.openHandler();
-    }
-  }
-
   static defaultProps = {
     timeLabel: 'Time',
     isTime: false,
@@ -48,10 +42,15 @@ class DatePicker extends React.Component<Props, State> {
     }));
   }
 
+  handleDay = e => {
+    this.props.onChange(e);
+    return this.openHandler();
+  };
+
   render() {
     const modifiers = { past: { before: new Date() } };
 
-    const { isTime, timeLabel, inputValue, onChange } = this.props;
+    const { isTime, timeLabel, inputValue } = this.props;
     const { isOpen } = this.state;
 
     return (
@@ -67,7 +66,7 @@ class DatePicker extends React.Component<Props, State> {
           <div className={s.dayPicker}>
             <DayPicker
               modifiers={modifiers}
-              onDayClick={onChange}
+              onDayClick={this.handleDay}
               {...this.props}
             />
             {isTime && <div className={s.dayPickerFooter}>
