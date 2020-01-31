@@ -63,9 +63,6 @@ export default {
       // namedExports: {
       //   'node_modules/react-is/index.js': ['isValidElementType'],
       // },
-      exclude: [
-        'react-day-picker/lib/**',
-      ]
     }),
     json(),
     postcss({

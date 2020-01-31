@@ -1,5 +1,5 @@
 import * as React from 'react';
-import DayPicker from 'react-day-picker';
+import DayPicker from 'react-day-picker/lib/src';
 import { Text, Icon, PrimaryButton, TextWithButton } from 'index';
 import ReactMaskInput from 'react-text-mask';
 
