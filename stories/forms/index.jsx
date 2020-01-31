@@ -152,5 +152,8 @@ export const DayPickerDecorator = decorator('Forms', FileInputDocs, ButtonReadme
     <Row>
       <DatePicker  />
     </Row>
+    <Row>
+      <DatePicker isTime />
+    </Row>
   </Wrapper>
 ));

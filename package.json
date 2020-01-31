@@ -1,6 +1,6 @@
 {
   "name": "@panenco/pwcui",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "PWC ui kit",
   "module": "lib/ui.esm.js",
   "main": "lib/ui.esm.js",
@@ -20,7 +20,7 @@
     "stylelint": "stylelint 'src/**/*.scss'",
     "pre-commit": "lint-staged",
     "deploy-storybook": "storybook-to-ghpages",
-    "prepublishOnly": "tsc"
+    "prepublishOnly": "yarn build"
   },
   "sideEffects": [
     "**.css"

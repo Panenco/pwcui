@@ -6,6 +6,7 @@ import s from './styles.scss';
 
 interface Props {
   className?: string,
+  readonly?: string,
   type?: 'submit' | 'reset' | 'button',
   error?: boolean,
 }

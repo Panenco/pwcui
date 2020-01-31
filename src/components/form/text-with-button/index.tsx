@@ -10,8 +10,10 @@ interface Props {
   className?: string,
   iconName: string,
   name?: string,
+  readonly?: string,
   disabled?: boolean,
   onButtonClick?: () => void,
+  onClick?: () => void,
 }
 
 export const TextWithButton: React.FunctionComponent<Props> = ({ className, iconName, name, disabled, onButtonClick, ...props }: Props) => {
