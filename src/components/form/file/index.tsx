@@ -41,14 +41,11 @@ class FileInput extends React.Component<Props, { rejected: any }> {
   };
 
   render() {
-    const { className, accept } = this.props;
+    const { className, accept, value } = this.props;
     return (
       <Dropzone accept={accept} onDrop={this.onDrop}>
         {({ getRootProps, getInputProps, isDragActive }) => {
-          const { value } = this.props;
-          if (value) {
-            return <p>{value.fileName}</p>;
-          }
+
           return (
             <div
               className={cx(
@@ -56,7 +53,11 @@ class FileInput extends React.Component<Props, { rejected: any }> {
                 className,
               )}
             >
-              <TextInput className={s.dropzoneInput} {...this.props} />
+              <TextInput
+                {...this.props}
+                className={s.dropzoneInput}
+                value={value ? value.name : ''}
+              />
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
                 <SecondaryButton className={s.dropzoneButton}>

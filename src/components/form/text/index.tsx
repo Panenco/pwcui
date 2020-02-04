@@ -9,6 +9,7 @@ interface Props {
   readonly?: string,
   type?: 'submit' | 'reset' | 'button',
   error?: boolean,
+  value?: any,
 }
 
 export const TextInput: React.FunctionComponent<Props> = ({ className, type, error, ...props }: Props) => (

@@ -180,3 +180,20 @@
     }
   }
 }
+
+@keyframes fadein {
+  from { width: 0; }
+  to { width: 75%; }
+}
+
+.filler {
+  animation: fadein 3s;
+  animation-iteration-count: infinite;
+  background-color: $dark-grey;
+  height: 4px;
+  width: 100%;
+
+  &Wrapper {
+    padding: 6px 0;
+  }
+}

@@ -6,7 +6,7 @@ import ButtonReadme from 'components/button/button-README.md';
 import TableDocs from 'components/table-items/table/table-DOCS.md';
 import PaginationDocs from 'components/table-items/pagination-DOCS.md';
 
-import { Row, Col, PaginationSelect, Table, Cell, HeaderCell, Header, TableRow, Text, PrimaryButtonIcon } from 'index';
+import { Row, TableFiller, Col, PaginationSelect, Table, Cell, HeaderCell, Header, TableRow, Text, PrimaryButtonIcon } from 'index';
 import { decorator } from '../../utils/decorator';
 
 const Wrapper = props => (
@@ -100,4 +100,14 @@ export const TableDecorator = decorator('Table', TableDocs, ButtonReadme).add('T
       </Row>
     </Wrapper>
   </BrowserRouter>
+));
+
+export const TableFillerDecorator = decorator('TableFiller', TableDocs, ButtonReadme).add('TableFiller', () => (
+    <Wrapper>
+      <Row>
+        <Col s="12">
+          <TableFiller columns={6} rows={6} />
+        </Col>
+      </Row>
+    </Wrapper>
 ));
