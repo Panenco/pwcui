@@ -15,13 +15,10 @@ interface Props {
   handleSort: (name: any) => void,
 }
 
-class HeaderCell extends React.Component<Props, {}>  {
-  handleSortClick = (name: string) => () => {
-    this.props.handleSort(name);
-  };
+class HeaderCell extends React.Component<Props>  {
 
   render() {
-    const { className, children, name, sort, ...props } = this.props;
+    const { className, children, handleSort, name, sort, ...props } = this.props;
     const asc = sort && sort.direction === 'asc' && sort.sort === name;
     const desc = sort && sort.direction === 'desc' && sort.sort === name;
 
@@ -31,6 +28,7 @@ class HeaderCell extends React.Component<Props, {}>  {
           name={name}
           type="button"
           className={cx(s.tableHeaderCellContent, !name && s.tableHeaderCellContentDisable)}
+          onClick={() => handleSort(name)}
         >
           <div className={cx(s.tableHeaderCellContentText, (asc || desc) && s.tableHeaderCellContentTextActive)}>
             {children}

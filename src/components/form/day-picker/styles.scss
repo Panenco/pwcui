@@ -14,6 +14,7 @@
     flex-direction: column;
     position: absolute;
     width: 257px;
+    z-index: 10;
 
     &Input {
       height: 34px;

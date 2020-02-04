@@ -28,9 +28,9 @@ interface Props {
 }
 
 const PaginationSelect: React.FunctionComponent<Props> = (props: Props) => {
-  const { totalItems = 0, onPagination, perPage = 10, className, formatUrl = '', currentPage = 1, disabled = false } = props;
+  const { totalItems = 0, onPagination, perPage = 10, className, formatUrl = '', currentPage = 0, disabled = false } = props;
   const from = perPage * currentPage + 1;
-  const isFirst = currentPage === 1;
+  const isFirst = currentPage === 0;
   const isLast = totalItems <= perPage * currentPage + perPage;
   const to = !isLast ? perPage * currentPage + perPage : totalItems;
   return (
