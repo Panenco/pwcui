@@ -1,10 +1,20 @@
 import * as React from 'react';
 import Select, { components, Props as SelectProps } from 'react-select';
+import { Text } from 'index'
 
 import { Icon } from 'components/icon';
 import s from './styles.scss';
 
-const customStyles = (isDisabled?: boolean) => ({
+const borderColor = (isDisabled, error) => {
+  if (error) {
+    return '#e0301e';
+  } else if (isDisabled) {
+    return '#CFD8DC';
+  }
+  return '#6d6e71';
+}
+
+const customStyles = (isDisabled?: boolean, error?: boolean) => ({
   container: (base: any, { selectProps }: any) => ({
     ...base,
     color: '#212121',
@@ -13,9 +23,9 @@ const customStyles = (isDisabled?: boolean) => ({
     fontFamily: 'Arial',
     width: '100%',
     zIndex: 10,
-    borderWidth: '1px',
+    borderWidth: error ? '2px' : '1px',
     borderStyle: 'solid',
-    borderColor: isDisabled ? '#CFD8DC' : '#6d6e71',
+    borderColor: borderColor(isDisabled, error),
     '&:hover': {
       cursor: 'default',
       borderColor: selectProps.menuIsOpen ? 'transparent' : '#90A4AE',
@@ -127,12 +137,23 @@ const ClearIndicator = (props: any) =>
 
 class SelectInput extends React.Component<SelectProps, {}> {
   render() {
-    const { placeholder, isDisabled } = this.props;
+    const { placeholder, isDisabled, error } = this.props;
 
     return (
       <div>
+        {error &&
+          <Text
+            size={Text.size.xs}
+            color={Text.color.black}
+            font={Text.font.secondary}
+            weight={Text.weight.medium}
+            className={s.multiSelectError}
+          >
+            {error}
+          </Text>
+        }
         <Select
-          styles={customStyles(isDisabled)}
+          styles={customStyles(isDisabled, error)}
           noOptionsMessage={() => 'Not found'}
           // loadingMessage="Loading..."
           placeholder={placeholder}

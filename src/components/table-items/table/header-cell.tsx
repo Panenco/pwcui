@@ -39,6 +39,7 @@ class HeaderCell extends React.Component<Props>  {
                 icon={Icon.icons.chevronUp}
                 className={cx(
                   s.tableHeaderCellContentSquareIcon,
+                  sort.sort === name && s.tableHeaderCellContentSquareIconActive,
                   asc && s.tableHeaderCellContentSquareIconDown,
                   !name && s.tableHeaderCellContentSquareHide,
                 )}

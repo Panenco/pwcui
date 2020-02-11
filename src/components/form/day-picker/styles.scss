@@ -6,6 +6,10 @@
     min-width: 300px;
   }
 
+  &Error {
+    margin-bottom: 4px;
+  }
+
   &Picker {
     align-items: center;
     background: $white;

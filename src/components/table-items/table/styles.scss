@@ -40,8 +40,11 @@
             width: 13px;
 
             &Down {
-              color: $red;
               transform: rotate(180deg);
+            }
+
+            &Active {
+              color: $red;
             }
           }
 

@@ -44,7 +44,7 @@ export default decorator('Forms', TextInputDocs, ButtonReadme).add('Input compon
     </Row>
     <Row>
       <Col s="12">
-        <TextInput error placeholder="Error" />
+        <TextInput error='Error label' placeholder="Error" />
       </Col>
     </Row>
     <Row>
@@ -113,6 +113,7 @@ export const SelectDecorator = decorator('Forms', SelectInputDocs, ButtonReadme)
       </Col>
       <Col s="12">
         <SelectInput
+          error='Required'
           options={[{ value: 'First', label: 'First option' }, { value: 'Second', label: 'Second option' }]}
         />
       </Col>

@@ -9,7 +9,6 @@ interface Props {
 }
 
 const CellFiller: React.FunctionComponent<Props> = (props: Props) => {
-  console.log(props)
   return (
     <Cell {...props}>
       <div className={s.fillerWrapper}>

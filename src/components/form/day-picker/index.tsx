@@ -9,6 +9,7 @@ interface Props {
   className?: string,
   timeLabel?: string,
   inputValue?: string,
+  error?: any,
   icon?: any,
   accept?: any,
   selectedDays?: any,
@@ -50,11 +51,22 @@ class DatePicker extends React.Component<Props, State> {
   render() {
     const modifiers = { past: { before: new Date() } };
 
-    const { isTime, timeLabel, inputValue } = this.props;
+    const { isTime, timeLabel, inputValue, error } = this.props;
     const { isOpen } = this.state;
 
     return (
       <div className={s.day}>
+        {error &&
+          <Text
+            size={Text.size.xs}
+            color={Text.color.black}
+            font={Text.font.secondary}
+            weight={Text.weight.medium}
+            className={s.dayError}
+          >
+            {error}
+          </Text>
+        }
         <TextWithButton
           iconName='calendar'
           onClick={this.openHandler}
