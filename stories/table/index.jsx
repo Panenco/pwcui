@@ -28,6 +28,7 @@ export default decorator('Table', PaginationDocs, ButtonReadme).add('Pagination 
             totalItems={1321}
             from={1}
             to={10}
+            perPageLabel='Items per page:'
             formatUrl={() => {
               return '/';
             }}

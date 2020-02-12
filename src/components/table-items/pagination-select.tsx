@@ -23,20 +23,36 @@ interface Props {
   perPage?: number;
   formatUrl?: any,
   className?: string,
+  perPageLabel?: string,
   currentPage?: number,
   disabled?: boolean,
 }
 
 const PaginationSelect: React.FunctionComponent<Props> = (props: Props) => {
-  const { totalItems = 0, onPagination, perPage = 10, className, formatUrl = '', currentPage = 0, disabled = false } = props;
+  const {
+    perPageLabel = 'Rows per page:',
+    totalItems = 0,
+    onPagination,
+    perPage = 10,
+    className,
+    formatUrl = '',
+    currentPage = 0,
+    disabled = false
+  } = props;
   const from = perPage * currentPage + 1;
   const isFirst = currentPage === 0;
   const isLast = totalItems <= perPage * currentPage + perPage;
   const to = !isLast ? perPage * currentPage + perPage : totalItems;
   return (
     <div className={cx(s.pagination, className)}>
-      <Text size={Text.size.xs} weight={Text.weight.lightWeight} color={Text.color.secondary} className={s.paginationBeginText}>
-        Rows per page:
+      <Text
+        font={Text.font.secondary}
+        size={Text.size.xs}
+        weight={Text.weight.lightWeight}
+        color={Text.color.secondary}
+        className={s.paginationBeginText}
+      >
+        {perPageLabel}
       </Text>
       <SelectInput
         options={options}
@@ -46,6 +62,7 @@ const PaginationSelect: React.FunctionComponent<Props> = (props: Props) => {
         className={s.paginationSelect}
       />
       <Text
+        font={Text.font.secondary}
         size={Text.size.xs}
         weight={Text.weight.lightWeight}
         color={Text.color.secondary}

@@ -59,6 +59,7 @@ interface UploadCardProps {
   title: string,
   value?: any,
   setFieldValue: (name: string, value: any) => void,
+  onChange: (value: any) => void,
   name: string
 }
 

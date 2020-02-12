@@ -33,7 +33,7 @@ class HeaderCell extends React.Component<Props>  {
           <div className={cx(s.tableHeaderCellContentText, (asc || desc) && s.tableHeaderCellContentTextActive)}>
             {children}
           </div>
-          {sort && (
+          {sort.sort === name && (
             <div className={cx(s.tableHeaderCellContentSquare, !name && s.tableHeaderCellContentSquareHide)}>
               <Icon
                 icon={Icon.icons.chevronUp}

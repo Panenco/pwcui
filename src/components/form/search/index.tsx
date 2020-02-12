@@ -15,9 +15,9 @@ interface Props {
 const Search: React.FunctionComponent<Props> = ({ className, placeholder, ...props }: Props) => {
   const [active, toggleActive] = React.useState(false);
   const inputRef = React.useRef<HTMLInputElement>(null);
-  React.useLayoutEffect(() => {
-    console.log(inputRef); // { current: <h1_object> }
-  })
+  // React.useLayoutEffect(() => {
+  //   console.log(inputRef); // { current: <h1_object> }
+  // })
   const handleOnClick = () => {
     if (!active) {
       (inputRef as any).current.focus();

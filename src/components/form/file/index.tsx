@@ -11,6 +11,7 @@ interface Props {
   accept?: any,
   name: string,
   setFieldValue: (name: string, value: any) => void,
+  onChange: (value: any) => void,
   title?: string,
   id?: string,
   value?: any,
@@ -23,7 +24,7 @@ class FileInput extends React.Component<Props, { rejected: any }> {
   };
 
   onDrop = (accepted: any, rejected: any) => {
-    const { name, setFieldValue, title, id } = this.props;
+    const { name, onChange, title, id } = this.props;
     this.setState({
       rejected: false,
     });
@@ -36,7 +37,7 @@ class FileInput extends React.Component<Props, { rejected: any }> {
       file.title = title;
       file.id = id;
       file.fieldName = name;
-      setFieldValue(name, file);
+      onChange(file);
     }
   };
 
