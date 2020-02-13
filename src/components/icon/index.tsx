@@ -27,6 +27,7 @@ import bellUnactive from './icons/16px/bell-unactive.svg';
 import bell from './icons/16px/bell.svg';
 import closeBig from './icons/16px/close.svg';
 import deleteIcon from './icons/16px/delete.svg';
+import download from './icons/16px/download.svg';
 import duplicate from './icons/16px/duplicate.svg';
 import edit from './icons/16px/edit.svg';
 import lock from './icons/16px/lock.svg';
@@ -82,6 +83,7 @@ Icon.icons = {
   clock,
   unseen,
   duplicate,
+  download,
   add,
   bell,
   bellUnactive,

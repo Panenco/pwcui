@@ -3,7 +3,7 @@ import { Cell } from './cell';
 import s from './styles.scss';
 
 interface Props {
-  width?: number;
+  width?: string;
   marginLeft?: boolean;
   className?: string,
 }

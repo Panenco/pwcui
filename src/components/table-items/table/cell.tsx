@@ -6,7 +6,7 @@ import s from './styles.scss';
 
 interface Props {
   children: React.ReactNode;
-  width?: number;
+  width?: string;
   marginLeft?: boolean;
   className?: string,
 }
@@ -18,7 +18,7 @@ const Cell: React.FunctionComponent<Props> = (props: Props) => {
   <div
     className={cx(s.tableCell, className)}
     style={{
-      width: `${width}`,
+      width: width,
       marginLeft: marginLeft ? 'auto' : 0,
     }}
     {...props}

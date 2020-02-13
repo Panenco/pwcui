@@ -14,7 +14,7 @@ const TableFiller: React.FunctionComponent<Props> = (props: Props) => {
   const kek = 100 / columns;
   const fillerRender = [...Array(rows)].map(() => (
     <TableRow>
-      {[...Array(columns)].map(() => <CellFiller width={kek} />)}
+      {[...Array(columns)].map(() => <CellFiller width={`${kek}%`} />)}
     </TableRow>
   ));
   return (
