@@ -59,5 +59,5 @@ Text.font = Object.entries(fonts).reduce((obj, [fontName]) => {
 }, {});
 
 Text.defaultProps = {
-  font: Text.font.primary,
+  font: Text.font.secondary,
 }

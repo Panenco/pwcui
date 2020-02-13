@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import { Icon } from 'components/icon';
+import { Text } from 'components/text';
 import * as cx_ from 'classnames';
 
 const cx = cx_;
@@ -18,7 +19,7 @@ export const PrimaryLink: React.FunctionComponent<LinkProps> = (props: LinkProps
 
     return(
     <RouterLink to={to} className={cx(s.link, disabled && s.linkDisabled, className)} {...otherProps}>
-      {children}
+      <Text font={Text.font.secondary}>{children}</Text>
     </RouterLink>
   );
 }

@@ -6,7 +6,7 @@ import ButtonReadme from 'components/button/button-README.md';
 import TableDocs from 'components/table-items/table/table-DOCS.md';
 import PaginationDocs from 'components/table-items/pagination-DOCS.md';
 
-import { Row, TableFiller, Col, PaginationSelect, Table, Cell, HeaderCell, Header, TableRow, Text, PrimaryButtonIcon } from 'index';
+import { Row, EmptyContent, TableFiller, Col, PaginationSelect, Table, Cell, HeaderCell, Header, TableRow, Text, PrimaryButtonIcon } from 'index';
 import { decorator } from '../../utils/decorator';
 
 const Wrapper = props => (
@@ -96,6 +96,28 @@ export const TableDecorator = decorator('Table', TableDocs, ButtonReadme).add('T
                 </TableRow>
               ))}
             </>
+          </Table>
+
+        </Col>
+      </Row>
+      <Row>
+        <Col s={12}>
+          <Table>
+            <Header>
+              <HeaderCell name="name" sort={{ sort: 'type', direction: 'desc' }} width="270px">
+                Name
+              </HeaderCell>
+              <HeaderCell name="type" sort={{ sort: 'type', direction: 'asc' }} width="100px">
+                Type
+              </HeaderCell>
+              <HeaderCell name="size" sort={{ sort: 'type', direction: 'asc' }} width="100px">
+                Size
+              </HeaderCell>
+              <HeaderCell name="added" sort={{ sort: 'type', direction: 'desc' }} width="180px">
+                Added
+              </HeaderCell>
+            </Header>
+            <EmptyContent isTable />
           </Table>
         </Col>
       </Row>
