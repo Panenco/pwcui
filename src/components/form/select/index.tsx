@@ -14,7 +14,7 @@ const borderColor = (isDisabled, error) => {
   return '#6d6e71';
 }
 
-const customStyles = (isDisabled?: boolean, error?: boolean) => ({
+const customStyles = (isDisabled?: boolean, error?: boolean, pagination?: boolean) => ({
   container: (base: any, { selectProps }: any) => ({
     ...base,
     color: '#212121',
@@ -51,7 +51,7 @@ const customStyles = (isDisabled?: boolean, error?: boolean) => ({
     cursor: selectProps.menuIsOpen && 'text',
     border: 'none',
     borderRadius: 0,
-    minHeight: 46,
+    minHeight: pagination ? 36 : 46,
   }),
   valueContainer: (base: any) => ({
     ...base,
@@ -137,7 +137,7 @@ const ClearIndicator = (props: any) =>
 
 class SelectInput extends React.Component<SelectProps, {}> {
   render() {
-    const { placeholder, isDisabled, error } = this.props;
+    const { placeholder, isDisabled, error, pagination } = this.props;
 
     return (
       <div>
@@ -153,7 +153,7 @@ class SelectInput extends React.Component<SelectProps, {}> {
           </Text>
         }
         <Select
-          styles={customStyles(isDisabled, error)}
+          styles={customStyles(isDisabled, error, pagination)}
           noOptionsMessage={() => 'Not found'}
           // loadingMessage="Loading..."
           placeholder={placeholder}

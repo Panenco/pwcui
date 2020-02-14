@@ -60,6 +60,7 @@ const PaginationSelect: React.FunctionComponent<Props> = (props: Props) => {
         value={options.find(option => option.value === perPage)}
         disabled={disabled}
         className={s.paginationSelect}
+        pagination
       />
       <Text
         font={Text.font.secondary}
