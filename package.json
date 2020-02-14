@@ -1,6 +1,6 @@
 {
   "name": "@panenco/pwcui",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "PWC ui kit",
   "module": "lib/ui.esm.js",
   "main": "lib/ui.esm.js",
@@ -127,6 +127,7 @@
   },
   "dependencies": {
     "react-day-picker": "^7.4.0",
+    "react-select": "^3.0.8",
     "react-text-mask": "^5.4.3"
   }
 }
