@@ -135,7 +135,9 @@ export const SearchDecorator = decorator('Forms', SearchInputDocs, ButtonReadme)
 export const FileDecorator = decorator('Forms', FileInputDocs, ButtonReadme).add('File Input', () => (
   <Wrapper>
     <Row>
-      <FileInput accept="application/pdf" icon={Icon.icons.pdf} />
+      <Col s='12'>
+        <FileInput accept="application/pdf" icon={Icon.icons.pdf} />
+      </Col>
     </Row>
   </Wrapper>
 ));

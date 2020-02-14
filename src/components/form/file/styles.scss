@@ -1,15 +1,14 @@
 @import 'core';
 
 .dropzone {
+  width: 100%;
 
   &Input {
+    min-width: 100%;
     pointer-events: none;
-    min-width: 320px;
   }
 
   &Empty {
-    // background-color: $light-grey;
-    // border: 1px dashed $dark-grey;
     cursor: pointer;
     display: flex;
     width: 100%;

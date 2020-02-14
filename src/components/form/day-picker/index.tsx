@@ -68,7 +68,7 @@ class DatePicker extends React.Component<Props, State> {
           </Text>
         }
         <TextWithButton
-          iconName='calendar'
+          iconName='date'
           onClick={this.openHandler}
           className={s.dayInput}
           readonly='readonly'
