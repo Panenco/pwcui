@@ -13,6 +13,7 @@ interface Props {
   error?: any,
   className?: any,
   field?: any,
+  labelText?: string,
 }
 
 class TextArea extends React.Component<Props, {}> {
@@ -38,10 +39,20 @@ class TextArea extends React.Component<Props, {}> {
   };
 
   render() {
-    const { innerRef, form, autoresize, minHeight, error, ...props } = this.props;
+    const { innerRef, labelText, form, autoresize, minHeight, error, ...props } = this.props;
 
     return (
       <div>
+        {labelText &&
+          <Text
+            size={Text.size.m}
+            color={Text.color.black}
+            font={Text.font.primary}
+            className={s.inputLabelText}
+          >
+            {labelText}
+          </Text>
+        }
         {error &&
           <Text
             size={Text.size.xs}

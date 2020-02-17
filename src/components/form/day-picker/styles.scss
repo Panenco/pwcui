@@ -102,3 +102,11 @@
     }
   }
 }
+
+.input {
+  &Label {
+    &Text {
+      margin-bottom: 4px;
+    }
+  }
+}

@@ -39,12 +39,12 @@ export default decorator('Forms', TextInputDocs, ButtonReadme).add('Input compon
     </Row>
     <Row>
       <Col s="12">
-        <TextInput placeholder="Placeholder" />
+        <TextInput labelText='Label' placeholder="Placeholder" />
       </Col>
     </Row>
     <Row>
       <Col s="12">
-        <TextInput error='Error label' placeholder="Error" />
+        <TextInput labelText='With error label' error='Error label' placeholder="Error" />
       </Col>
     </Row>
     <Row>
@@ -54,7 +54,12 @@ export default decorator('Forms', TextInputDocs, ButtonReadme).add('Input compon
     </Row>
     <Row>
       <Col s="12">
-        <TextWithButton iconName="date" placeholder="DD/MM/YYYY" />
+        <TextWithButton
+          labelText='With error label'
+          error='Error label'
+          iconName="date"
+          placeholder="DD/MM/YYYY"
+        />
       </Col>
     </Row>
     <Row>
@@ -106,13 +111,9 @@ export const Radiobutton = decorator('Forms', RadioDocs, ButtonReadme).add('Radi
 export const SelectDecorator = decorator('Forms', SelectInputDocs, ButtonReadme).add('Select', () => (
   <Wrapper>
     <Row>
-
-      <Col s="12">
-      <TextInput  placeholder="Error" />
-
-      </Col>
       <Col s="12">
         <SelectInput
+          labelText='With error label'
           error='Required'
           options={[{ value: 'First', label: 'First option' }, { value: 'Second', label: 'Second option' }]}
         />
@@ -136,7 +137,11 @@ export const FileDecorator = decorator('Forms', FileInputDocs, ButtonReadme).add
   <Wrapper>
     <Row>
       <Col s='12'>
-        <FileInput accept="application/pdf" icon={Icon.icons.pdf} />
+        <FileInput
+          labelText='File label'
+          accept="application/pdf"
+          icon={Icon.icons.pdf}
+        />
       </Col>
     </Row>
   </Wrapper>
@@ -153,10 +158,16 @@ export const DropzoneDecorator = decorator('Forms', DropzoneDocs, ButtonReadme).
 export const DayPickerDecorator = decorator('Forms', FileInputDocs, ButtonReadme).add('DayPicker Input', () => (
   <Wrapper>
     <Row>
-      <DatePicker  />
+      <DatePicker
+        labelText='With error label'
+        error='Required'
+      />
     </Row>
     <Row>
-      <DatePicker isTime />
+      <DatePicker
+        isTime
+        labelText='With error label'
+      />
     </Row>
   </Wrapper>
 ));

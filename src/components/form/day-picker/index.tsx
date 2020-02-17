@@ -8,6 +8,7 @@ import s from './styles.scss';
 interface Props {
   className?: string,
   timeLabel?: string,
+  labelText?: string,
   inputValue?: string,
   error?: any,
   icon?: any,
@@ -51,20 +52,19 @@ class DatePicker extends React.Component<Props, State> {
   render() {
     const modifiers = { past: { before: new Date() } };
 
-    const { isTime, timeLabel, inputValue, error } = this.props;
+    const { isTime, labelText, timeLabel, inputValue, error } = this.props;
     const { isOpen } = this.state;
 
     return (
       <div className={s.day}>
-        {error &&
+        {labelText &&
           <Text
-            size={Text.size.xs}
+            size={Text.size.m}
             color={Text.color.black}
-            font={Text.font.secondary}
-            weight={Text.weight.medium}
-            className={s.dayError}
+            font={Text.font.primary}
+            className={s.inputLabelText}
           >
-            {error}
+            {labelText}
           </Text>
         }
         <TextWithButton
@@ -73,6 +73,7 @@ class DatePicker extends React.Component<Props, State> {
           className={s.dayInput}
           readonly='readonly'
           value={inputValue}
+          error={error}
         />
         {isOpen ? (
           <div className={s.dayPicker}>

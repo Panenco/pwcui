@@ -11,6 +11,7 @@ interface Props {
   iconName: string,
   name?: string,
   value?: string,
+  error?: any,
   readonly?: string,
   disabled?: boolean,
   onButtonClick?: () => void,
@@ -21,9 +22,12 @@ export const TextWithButton: React.FunctionComponent<Props> = ({ className, icon
   return (
     <div className={cx(s.input, className)}>
       <TextInput {...props} />
-      <button type="button" className={s.button} name={name} disabled={disabled} onClick={onButtonClick}>
-        <Icon icon={Icon.icons[iconName]} className={s.buttonIcon} />
-      </button>
+      {!props.error &&
+        <button type="button" className={s.button} name={name} disabled={disabled} onClick={onButtonClick}>
+          <Icon icon={Icon.icons[iconName]} className={s.buttonIcon} />
+        </button>
+      }
+
     </div>
   );
 };

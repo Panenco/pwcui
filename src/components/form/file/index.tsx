@@ -1,13 +1,15 @@
 import * as React from 'react';
 import Dropzone from 'react-dropzone';
 import * as cx_ from 'classnames';
-import { TextInput, SecondaryButton } from 'index';
+import { TextInput, SecondaryButton, Text } from 'index';
 
 const cx = cx_;
 import s from './styles.scss';
 
 interface Props {
   className?: string,
+  labelText?: string,
+  error?: any,
   accept?: any,
   name: string,
   setFieldValue: (name: string, value: any) => void,
@@ -42,33 +44,54 @@ class FileInput extends React.Component<Props, { rejected: any }> {
   };
 
   render() {
-    const { className, accept, value } = this.props;
+    const { className, accept, value, error, labelText } = this.props;
     return (
-      <Dropzone accept={accept} onDrop={this.onDrop}>
-        {({ getRootProps, getInputProps, isDragActive }) => {
-
-          return (
-            <div
-              className={cx(
-                s.dropzoneEmpty,
-                className,
-              )}
-            >
-              <TextInput
-                {...this.props}
-                className={s.dropzoneInput}
-                value={value ? value.name : ''}
-              />
-              <div {...getRootProps()}>
-                <input {...getInputProps()} />
-                <SecondaryButton className={s.dropzoneButton}>
-                  Upload
-                </SecondaryButton>
+      <div>
+        {labelText &&
+          <Text
+            size={Text.size.m}
+            color={Text.color.black}
+            font={Text.font.primary}
+            className={s.inputLabelText}
+          >
+            {labelText}
+          </Text>
+        }
+        {error &&
+          <Text
+            size={Text.size.xs}
+            color={Text.color.black}
+            font={Text.font.secondary}
+            weight={Text.weight.medium}
+            className={s.inputErrorText}
+          >
+            {error}
+          </Text>
+        }
+        <Dropzone accept={accept} onDrop={this.onDrop}>
+          {({ getRootProps, getInputProps, isDragActive }) => {
+            return (
+              <div
+                className={cx(
+                  s.dropzoneEmpty,
+                  className,
+                )}
+              >
+                <TextInput
+                  className={s.dropzoneInput}
+                  value={value ? value.name : ''}
+                />
+                <div {...getRootProps()}>
+                  <input {...getInputProps()} />
+                  <SecondaryButton className={s.dropzoneButton}>
+                    Upload
+                  </SecondaryButton>
+                </div>
               </div>
-            </div>
-          );
-        }}
-      </Dropzone>
+            );
+          }}
+        </Dropzone>
+      </div>
     );
   }
 }

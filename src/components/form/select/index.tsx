@@ -137,10 +137,20 @@ const ClearIndicator = (props: any) =>
 
 class SelectInput extends React.Component<SelectProps, {}> {
   render() {
-    const { placeholder, isDisabled, error, pagination } = this.props;
+    const { placeholder, labelText, isDisabled, error, pagination } = this.props;
 
     return (
-      <div>
+      <div className={s.wrapper}>
+        {labelText &&
+          <Text
+            size={Text.size.m}
+            color={Text.color.black}
+            font={Text.font.primary}
+            className={s.inputLabelText}
+          >
+            {labelText}
+          </Text>
+        }
         {error &&
           <Text
             size={Text.size.xs}
@@ -155,7 +165,6 @@ class SelectInput extends React.Component<SelectProps, {}> {
         <Select
           styles={customStyles(isDisabled, error, pagination)}
           noOptionsMessage={() => 'Not found'}
-          // loadingMessage="Loading..."
           placeholder={placeholder}
           components={{ DropdownIndicator, ClearIndicator }}
           closeMenuOnSelect

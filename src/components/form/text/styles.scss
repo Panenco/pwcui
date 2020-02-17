@@ -23,6 +23,8 @@
   }
 
   &Wrapper {
+    display: flex;
+    flex-direction: column;
     position: relative;
     width: 100%;
 
@@ -49,6 +51,12 @@
     border: 2px solid $red;
     position: relative;
 
+    &Text {
+      margin-bottom: 4px;
+    }
+  }
+
+  &Label {
     &Text {
       margin-bottom: 4px;
     }

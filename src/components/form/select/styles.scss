@@ -21,3 +21,16 @@
     margin-bottom: 4px;
   }
 }
+
+.input {
+  &Label {
+    &Text {
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
