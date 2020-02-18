@@ -36,6 +36,16 @@ export const PrimaryButton: React.FunctionComponent<Props> = (props: Props): any
   );
 }
 
+export const PlainButton: React.FunctionComponent<Props> = (props: Props): any => {
+  const { type, className, children, ...otherProps } = props;
+
+  return(
+    <Button type={type} className={cx(s.button, s.buttonPlain, className)} {...otherProps}>
+      {children}
+    </Button>
+  );
+}
+
 export const SecondaryButton: React.FunctionComponent<Props> = (props: Props): any => {
   const { type, className, children, ...otherProps } = props;
 

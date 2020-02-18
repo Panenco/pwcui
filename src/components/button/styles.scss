@@ -87,6 +87,31 @@
     }
   }
 
+  &Plain {
+    background-color: transparent;
+    border: none;
+    color: $black;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:hover {
+      background-color: transparent;
+      border: none;
+      color: $red;
+    }
+
+    &:active {
+      background-color: transparent;
+      border: none;
+      color: $burgundy;
+    }
+
+    &Small {
+      font-size: $xs;
+      padding: 7px 30px;
+    }
+  }
+
   &Disabled {
     opacity: 0.3;
     pointer-events: none !important;
