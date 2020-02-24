@@ -1,6 +1,6 @@
 {
   "name": "@panenco/pwcui",
-  "version": "0.1.20",
+  "version": "0.2.0",
   "description": "PWC ui kit",
   "module": "lib/ui.esm.js",
   "main": "lib/ui.esm.js",

@@ -71,11 +71,10 @@ const customStyles = (isDisabled?: boolean, error?: boolean, pagination?: boolea
     borderRadius: 0,
     marginTop: 2,
     padding: 0,
-    zIndex: 100500,
   }),
   menuPortal: base => ({
     ...base,
-    zIndex: 100500,
+    zIndex: 9999,
   }),
   menuList: (base: any) => ({
     ...base,
@@ -168,6 +167,9 @@ class SelectInput extends React.Component<SelectProps, {}> {
           placeholder={placeholder}
           components={{ DropdownIndicator, ClearIndicator }}
           closeMenuOnSelect
+          menuPortalTarget={document.body}
+          menuPosition='absolute'
+          menuPlacement='bottom'
           {...this.props}
         />
       </div>

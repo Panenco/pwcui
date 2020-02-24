@@ -21,22 +21,24 @@ interface ContentCardProps {
   className?: string,
   title: string,
   subTitle?: string,
-  date?: string,
+  description?: string,
   linkPath?: string,
   linkText?: string,
 }
 
-export const ContentCard: React.FunctionComponent<ContentCardProps> = ({ className, title, subTitle, date, linkPath, linkText }: ContentCardProps) => (
+export const ContentCard: React.FunctionComponent<ContentCardProps> = ({ className, title, subTitle, description, linkPath, linkText }: ContentCardProps) => (
   <Card className={cx(s.cardContent, className)}>
-    <Text className={cx(s.cardContentTitle)} size={Text.size.l}>
+    <Text color={Text.color.black} className={cx(s.cardContentTitle)} size={Text.size.l} font={Text.font.primary}>
       {title}
     </Text>
-    <Text className={cx(s.cardContentSub)} size={Text.size.s} font={Text.font.secondary}>
-      {subTitle}
-    </Text>
-    {date && (
-      <Text size={Text.size.s} font={Text.font.secondary} color={Text.color.darkgrey}>
-        {date}
+    {subTitle && (
+      <Text color={Text.color.black} className={cx(s.cardContentSub)} size={Text.size.s} font={Text.font.secondary}>
+        {subTitle}
+      </Text>
+    )}
+    {description && (
+      <Text className={cx(s.cardContentDescription)} size={Text.size.s} font={Text.font.secondary} color={Text.color.darkgrey}>
+        {description}
       </Text>
     )}
     <PrimaryButton component="link" className={cx(s.cardContentButton)} to={linkPath}>
@@ -47,7 +49,7 @@ export const ContentCard: React.FunctionComponent<ContentCardProps> = ({ classNa
 
 ContentCard.defaultProps = {
   className: '',
-  date: '',
+  description: '',
   title: 'Card Title',
   subTitle: 'Subtitle',
   linkPath: '/',
@@ -76,7 +78,7 @@ export const UploadCard: React.FunctionComponent<UploadCardProps> = ({ className
 
   return (
     <Card className={cx(s.cardUpload, className)}>
-      <Text className={cx(s.cardUploadTitle)} size={Text.size.l}>
+      <Text className={cx(s.cardUploadTitle)} size={Text.size.l} font={Text.font.primary} color={Text.color.black}>
         {title}
       </Text>
       {value && value.name ? (

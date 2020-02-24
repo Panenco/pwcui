@@ -122,6 +122,10 @@ export const SelectDecorator = decorator('Forms', SelectInputDocs, ButtonReadme)
         <SelectInput isDisabled />
       </Col>
     </Row>
+    <Row><Col s='6'>
+    <SelectInput />
+    </Col>
+    </Row>
   </Wrapper>
 ));
 

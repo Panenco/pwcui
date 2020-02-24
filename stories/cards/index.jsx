@@ -43,7 +43,7 @@ export default decorator('Card', CardDocs, CardReadme).add('Card components', ()
           <ContentCard
             title="Hover card with very long name which takes more then 1 row"
             subTitle="5 active engagements"
-            date="02/11/19"
+            description="02/11/19"
           />
         </Col>
       </Row>
