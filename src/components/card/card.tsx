@@ -51,7 +51,7 @@ ContentCard.defaultProps = {
   className: '',
   description: '',
   title: 'Card Title',
-  subTitle: 'Subtitle',
+  subTitle: '',
   linkPath: '/',
   linkText: 'Button link',
 };

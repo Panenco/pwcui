@@ -49,7 +49,7 @@ const PaginationSelect: React.FunctionComponent<Props> = (props: Props) => {
         font={Text.font.secondary}
         size={Text.size.xs}
         weight={Text.weight.lightWeight}
-        color={Text.color.secondary}
+        color={Text.color.darkgrey}
         className={s.paginationBeginText}
       >
         {perPageLabel}
@@ -66,7 +66,7 @@ const PaginationSelect: React.FunctionComponent<Props> = (props: Props) => {
         font={Text.font.secondary}
         size={Text.size.xs}
         weight={Text.weight.lightWeight}
-        color={Text.color.secondary}
+        color={Text.color.darkgrey}
         className={s.paginationText}
       >
         {`${totalItems > 0 ? from : 0}-${to} of ${totalItems}`}
