@@ -1,9 +1,12 @@
 import * as React from 'react';
 import Select, { components, Props as SelectProps } from 'react-select';
 import { Text } from 'index'
+import AsyncPaginate, { Props as AsyncSelectProps } from 'react-select-async-paginate';
 
 import { Icon } from 'components/icon';
 import s from './styles.scss';
+
+type CombinedProps = SelectProps<any> | AsyncSelectProps<any>;
 
 const borderColor = (isDisabled, error) => {
   if (error) {
@@ -134,9 +137,12 @@ const ClearIndicator = (props: any) =>
     </components.ClearIndicator>
   );
 
-class SelectInput extends React.Component<SelectProps, {}> {
+
+class SelectInput extends React.Component<CombinedProps, {}> {
   render() {
-    const { placeholder, labelText, isDisabled, error, pagination } = this.props;
+    const { loadOptions, placeholder, labelText, isDisabled, error, pagination } = this.props;
+    let Component: React.ComponentType<any>;
+    Component = loadOptions ? AsyncPaginate : Select;
 
     return (
       <div className={s.wrapper}>
@@ -161,7 +167,7 @@ class SelectInput extends React.Component<SelectProps, {}> {
             {error}
           </Text>
         }
-        <Select
+        <Component
           styles={customStyles(isDisabled, error, pagination)}
           noOptionsMessage={() => 'Not found'}
           placeholder={placeholder}
