@@ -11,23 +11,36 @@ import SearchInputDocs from 'components/form/search/search-DOCS.md';
 import FileInputDocs from 'components/form/file/file-DOCS.md';
 import DropzoneDocs from 'components/form/dropzone/dropzone-DOCS.md';
 
-import { DatePicker, TextArea, TextInput, SelectInput, Checkbox, Search, Row, Col, TextWithButton, FileInput, Dropzone, Icon, Radio } from 'index';
+import {
+  DatePicker,
+  TextArea,
+  TextInput,
+  SelectInput,
+  Checkbox,
+  Search,
+  Row,
+  Col,
+  TextWithButton,
+  FileInput,
+  Dropzone,
+  Icon,
+  Radio,
+} from 'index';
 
 import { decorator } from '../../utils/decorator';
 
-const Wrapper = props => (
+const Wrapper = () => (
   <div
     style={{
       backgroundColor: 'white',
       marginTop: '30px',
     }}
-    {...props}
   />
 );
 
 export default decorator('Forms', TextInputDocs, ButtonReadme).add('Input components', () => (
   <Wrapper>
-   <Row>
+    <Row>
       <Col s="12">
         <TextArea placeholder="Placeholder" />
       </Col>
@@ -39,12 +52,12 @@ export default decorator('Forms', TextInputDocs, ButtonReadme).add('Input compon
     </Row>
     <Row>
       <Col s="12">
-        <TextInput labelText='Label' placeholder="Placeholder" />
+        <TextInput labelText="Label" placeholder="Placeholder" />
       </Col>
     </Row>
     <Row>
       <Col s="12">
-        <TextInput labelText='With error label' error='Error label' placeholder="Error" />
+        <TextInput labelText="With error label" error="Error label" placeholder="Error" />
       </Col>
     </Row>
     <Row>
@@ -54,12 +67,7 @@ export default decorator('Forms', TextInputDocs, ButtonReadme).add('Input compon
     </Row>
     <Row>
       <Col s="12">
-        <TextWithButton
-          labelText='With error label'
-          error='Error label'
-          iconName="date"
-          placeholder="DD/MM/YYYY"
-        />
+        <TextWithButton labelText="With error label" error="Error label" iconName="date" placeholder="DD/MM/YYYY" />
       </Col>
     </Row>
     <Row>
@@ -113,8 +121,8 @@ export const SelectDecorator = decorator('Forms', SelectInputDocs, ButtonReadme)
     <Row>
       <Col s="12">
         <SelectInput
-          labelText='With error label'
-          error='Required'
+          labelText="With error label"
+          error="Required"
           options={[{ value: 'First', label: 'First option' }, { value: 'Second', label: 'Second option' }]}
         />
       </Col>
@@ -122,9 +130,10 @@ export const SelectDecorator = decorator('Forms', SelectInputDocs, ButtonReadme)
         <SelectInput isDisabled />
       </Col>
     </Row>
-    <Row><Col s='6'>
-    <SelectInput />
-    </Col>
+    <Row>
+      <Col s="6">
+        <SelectInput />
+      </Col>
     </Row>
   </Wrapper>
 ));
@@ -140,12 +149,8 @@ export const SearchDecorator = decorator('Forms', SearchInputDocs, ButtonReadme)
 export const FileDecorator = decorator('Forms', FileInputDocs, ButtonReadme).add('File Input', () => (
   <Wrapper>
     <Row>
-      <Col s='12'>
-        <FileInput
-          labelText='File label'
-          accept="application/pdf"
-          icon={Icon.icons.pdf}
-        />
+      <Col s="12">
+        <FileInput labelText="File label" accept="application/pdf" icon={Icon.icons.pdf} />
       </Col>
     </Row>
   </Wrapper>
@@ -162,16 +167,10 @@ export const DropzoneDecorator = decorator('Forms', DropzoneDocs, ButtonReadme).
 export const DayPickerDecorator = decorator('Forms', FileInputDocs, ButtonReadme).add('DayPicker Input', () => (
   <Wrapper>
     <Row>
-      <DatePicker
-        labelText='With error label'
-        error='Required'
-      />
+      <DatePicker labelText="With error label" error="Required" />
     </Row>
     <Row>
-      <DatePicker
-        isTime
-        labelText='With error label'
-      />
+      <DatePicker isTime labelText="With error label" />
     </Row>
   </Wrapper>
 ));

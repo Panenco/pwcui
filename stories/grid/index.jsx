@@ -20,13 +20,12 @@ const Column = () => (
   />
 );
 
-const Wrapper = props => (
+const Wrapper = () => (
   <div
     style={{
       backgroundColor: 'white',
       marginTop: '30px',
     }}
-    {...props}
   />
 );
 

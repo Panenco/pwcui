@@ -106,8 +106,8 @@ module.exports = {
   plugins: (() => {
     const plugins = [
       new MiniCssExtractPlugin({
-        filename: path.join('css', `[name].[hash].css`),
-        chunkFilename: path.join('css', `[id].[hash].css`),
+        filename: path.join('css', '[name].[hash].css'),
+        chunkFilename: path.join('css', '[id].[hash].css'),
       }),
       new OptimizeCSSAssetsPlugin({}),
       new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' }),

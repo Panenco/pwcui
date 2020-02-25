@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="100%" height="100%" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
-    <title>icon / 8 px / chevron down</title>
+<svg width="16px" height="9px" viewBox="0 0 16 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>chevron</title>
     <desc>Created with Sketch.</desc>
-    <g id="icon-/-8-px-/-chevron-down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect id="Rectangle" x="0" y="0" width="8" height="6"></rect>
-        <polygon id="Path-Copy-14" fill="#6D6E71" fill-rule="nonzero" points="7.35031757 0.675158787 8 1.32484121 4 5.32484121 0 1.32484121 0.649682425 0.675158787 4 4.02547636"></polygon>
+    <g id="Assettests" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="UI-kit" transform="translate(-6470.000000, -205.000000)" fill="#6D6E71">
+            <g id="pagination_hover" transform="translate(6275.000000, 192.000000)">
+                <g id="dropdown" transform="translate(137.000000, 0.000000)">
+                    <polygon id="chevron" points="73.156588 13 74 13.843412 66 21.843412 58 13.843412 58.843412 13 66 20.156119"></polygon>
+                </g>
+            </g>
+        </g>
     </g>
 </svg>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Select, { components, Props as SelectProps } from 'react-select';
-import { Text } from 'index'
+import { Text } from 'index';
 import AsyncPaginate, { Props as AsyncSelectProps } from 'react-select-async-paginate';
 
 import { Icon } from 'components/icon';
@@ -15,13 +15,13 @@ const borderColor = (isDisabled, error) => {
     return '#CFD8DC';
   }
   return '#6d6e71';
-}
+};
 
 const customStyles = (isDisabled?: boolean, error?: boolean, pagination?: boolean) => ({
   container: (base: any, { selectProps }: any) => ({
     ...base,
     color: '#212121',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 300,
     fontFamily: 'Arial',
     width: '100%',
@@ -61,12 +61,12 @@ const customStyles = (isDisabled?: boolean, error?: boolean, pagination?: boolea
     paddingLeft: 10,
     paddingTop: 0,
     paddingBottom: 0,
-    fontFamily: 'Georgia',
+    fontFamily: 'Arial',
     color: '#404041',
   }),
   singleValue: (base: any) => ({
     ...base,
-    top: '49%',
+    top: '50%',
   }),
   menu: (base: any) => ({
     ...base,
@@ -103,14 +103,17 @@ const customStyles = (isDisabled?: boolean, error?: boolean, pagination?: boolea
   placeholder: (base: any) => ({
     ...base,
     color: '#6D6E71',
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 300,
-    fontFamily: 'Georgia',
+    fontFamily: 'Arial',
   }),
   dropdownIndicator: (base: any, { selectProps }: any) => ({
     ...base,
-    color: '#445A64',
-    padding: 12,
+    color: '#6D6E71',
+    backgroundColor: pagination ? '#F2F2F2' : 'transparent',
+    alignItems: 'center',
+    height: '100%',
+    padding: pagination ? '12px 10px' : 12,
     transform: selectProps.menuIsOpen && 'rotate(180deg)',
     '&:hover': {
       cursor: 'pointer',
@@ -137,7 +140,6 @@ const ClearIndicator = (props: any) =>
     </components.ClearIndicator>
   );
 
-
 class SelectInput extends React.Component<CombinedProps, {}> {
   render() {
     const { loadOptions, placeholder, labelText, isDisabled, error, pagination } = this.props;
@@ -146,17 +148,12 @@ class SelectInput extends React.Component<CombinedProps, {}> {
 
     return (
       <div className={s.wrapper}>
-        {labelText &&
-          <Text
-            size={Text.size.m}
-            color={Text.color.black}
-            font={Text.font.primary}
-            className={s.inputLabelText}
-          >
+        {labelText && (
+          <Text size={Text.size.m} color={Text.color.black} font={Text.font.primary} className={s.inputLabelText}>
             {labelText}
           </Text>
-        }
-        {error &&
+        )}
+        {error && (
           <Text
             size={Text.size.xs}
             color={Text.color.black}
@@ -166,7 +163,7 @@ class SelectInput extends React.Component<CombinedProps, {}> {
           >
             {error}
           </Text>
-        }
+        )}
         <Component
           styles={customStyles(isDisabled, error, pagination)}
           noOptionsMessage={() => 'Not found'}
@@ -174,8 +171,8 @@ class SelectInput extends React.Component<CombinedProps, {}> {
           components={{ DropdownIndicator, ClearIndicator }}
           closeMenuOnSelect
           menuPortalTarget={document.body}
-          menuPosition='absolute'
-          menuPlacement='bottom'
+          menuPosition="absolute"
+          menuPlacement="bottom"
           {...this.props}
         />
       </div>

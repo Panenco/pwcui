@@ -6,16 +6,28 @@ import ButtonReadme from 'components/button/button-README.md';
 import TableDocs from 'components/table-items/table/table-DOCS.md';
 import PaginationDocs from 'components/table-items/pagination-DOCS.md';
 
-import { Row, EmptyContent, TableFiller, Col, PaginationSelect, Table, Cell, HeaderCell, Header, TableRow, Text, PrimaryButtonIcon } from 'index';
+import {
+  Row,
+  EmptyContent,
+  TableFiller,
+  Col,
+  PaginationSelect,
+  Table,
+  Cell,
+  HeaderCell,
+  Header,
+  TableRow,
+  Text,
+  PrimaryButtonIcon,
+} from 'index';
 import { decorator } from '../../utils/decorator';
 
-const Wrapper = props => (
+const Wrapper = () => (
   <div
     style={{
       backgroundColor: 'white',
       marginTop: '30px',
     }}
-    {...props}
   />
 );
 
@@ -28,7 +40,7 @@ export default decorator('Table', PaginationDocs, ButtonReadme).add('Pagination 
             totalItems={1321}
             from={1}
             to={10}
-            perPageLabel='Items per page:'
+            perPageLabel="Items per page:"
             formatUrl={() => {
               return '/';
             }}
@@ -79,8 +91,8 @@ export const TableDecorator = decorator('Table', TableDocs, ButtonReadme).add('T
                   size: '279 KB',
                   date: '14/Mar/2019 17:30',
                 },
-              ].map(row => (
-                <TableRow>
+              ].map((row, index) => (
+                <TableRow key={row.id}>
                   <Cell width="270px">
                     <Text>{row.name}</Text>
                   </Cell>
@@ -97,7 +109,6 @@ export const TableDecorator = decorator('Table', TableDocs, ButtonReadme).add('T
               ))}
             </>
           </Table>
-
         </Col>
       </Row>
       <Row>
@@ -126,11 +137,11 @@ export const TableDecorator = decorator('Table', TableDocs, ButtonReadme).add('T
 ));
 
 export const TableFillerDecorator = decorator('TableFiller', TableDocs, ButtonReadme).add('TableFiller', () => (
-    <Wrapper>
-      <Row>
-        <Col s="12">
-          <TableFiller columns={6} rows={6} />
-        </Col>
-      </Row>
-    </Wrapper>
+  <Wrapper>
+    <Row>
+      <Col s="12">
+        <TableFiller columns={6} rows={6} />
+      </Col>
+    </Row>
+  </Wrapper>
 ));

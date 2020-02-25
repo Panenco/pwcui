@@ -30,13 +30,12 @@ import {
 
 import { decorator } from '../../utils/decorator';
 
-const Wrapper = props => (
+const Wrapper = () => (
   <div
     style={{
       backgroundColor: 'white',
       marginTop: '30px',
     }}
-    {...props}
   />
 );
 
@@ -80,7 +79,9 @@ export const Links = decorator('Button', LinkDocs, LinkReadme).add('Link compone
     <Wrapper>
       <Row>
         <Col s="12">
-          <PrimaryButton component="link" to="/">Primary Button Link</PrimaryButton>
+          <PrimaryButton component="link" to="/">
+            Primary Button Link
+          </PrimaryButton>
           <PrimaryButton component="link" to="/" disabled>
             Primary disabled
           </PrimaryButton>
@@ -88,7 +89,9 @@ export const Links = decorator('Button', LinkDocs, LinkReadme).add('Link compone
       </Row>
       <Row>
         <Col s="12">
-          <Button component="link" to="/">Button Link</Button>
+          <Button component="link" to="/">
+            Button Link
+          </Button>
           <Button component="link" to="/" disabled>
             Button Link disabled
           </Button>
@@ -96,14 +99,16 @@ export const Links = decorator('Button', LinkDocs, LinkReadme).add('Link compone
       </Row>
       <Row>
         <Col s="12">
-          <SecondaryButton component="link" to="/">Secondary Button Link</SecondaryButton>
+          <SecondaryButton component="link" to="/">
+            Secondary Button Link
+          </SecondaryButton>
           <SecondaryButton component="link" to="/" disabled>
             Secondary Disabled
           </SecondaryButton>
         </Col>
       </Row>
 
-       <Row>
+      <Row>
         <Col s="12">
           <PrimaryLink to="/">Primary Link</PrimaryLink>
           <PrimaryLink to="/" disabled>
@@ -114,7 +119,9 @@ export const Links = decorator('Button', LinkDocs, LinkReadme).add('Link compone
 
       <Row>
         <Col s="12">
-          <LinkIcon to="/" icon={Icon.icons.arrowForward}>LinkIcon</LinkIcon>
+          <LinkIcon to="/" icon={Icon.icons.arrowForward}>
+            LinkIcon
+          </LinkIcon>
           <LinkIcon to="/" icon={Icon.icons.arrowForward} disabled>
             Disabled
           </LinkIcon>
@@ -164,7 +171,9 @@ export const IconButtons = decorator('Button', IconButtonDocs, IconButtonReadme)
     <Wrapper>
       <Row>
         <IconButton icon={Icon.icons.chevronDown}>IconButton</IconButton>
-        <IconButton icon={Icon.icons.chevronDown} disabled>IconButton Disabled</IconButton>
+        <IconButton icon={Icon.icons.chevronDown} disabled>
+          IconButton Disabled
+        </IconButton>
       </Row>
     </Wrapper>
   </BrowserRouter>

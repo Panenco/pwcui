@@ -5,13 +5,12 @@ import IconReadme from 'components/icon/README.md';
 
 import { decorator } from '../../utils/decorator';
 
-const Wrapper = props => (
+const Wrapper = () => (
   <div
     style={{
       backgroundColor: 'white',
       marginTop: '30px',
     }}
-    {...props}
   />
 );
 

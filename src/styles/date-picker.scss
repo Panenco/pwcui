@@ -56,7 +56,7 @@
     display: inline-block;
     height: 1.25em;
     left: auto;
-    margin-top: 2px;
+    margin-top: 6px;
     position: absolute;
     right: 1.5em;
     top: 1em;
@@ -90,7 +90,6 @@
 
     @include font($s, $normal, $black, $secondary);
   }
-
 
   .DayPicker-Weekdays {
     display: table-header-group;
@@ -236,10 +235,10 @@
     background-color: $secondary;
   }
 
-  .DayPicker:not(.DayPicker--interactionDisabled)
-    .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
-    background-color: $focus;
-  }
+  // .DayPicker:not(.DayPicker--interactionDisabled)
+  //   .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  //   background-color: $focus;
+  // }
 
   /* DayPickerInput */
 
@@ -276,7 +275,8 @@
     @include font($l, $medium, $light-grey);
   }
 
-  .DayPicker-Day--past, .DayPicker-Weekday {
+  .DayPicker-Day--past,
+  .DayPicker-Weekday {
     @include font($xs, $normal, $dark-grey, $secondary);
   }
 
@@ -284,5 +284,18 @@
     background-color: $dark-grey;
 
     @include font($xs, $medium, $white, $secondary);
+  }
+
+  .DayPicker-NavBar {
+    margin-top: 12px;
+  }
+
+  .DayPicker-NavButton--prev {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgNiA4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA1NS4xICg3ODEzNikgLSBodHRwczovL3NrZXRjaGFwcC5jb20gLS0+CiAgICA8dGl0bGU+aWNvbiAvIDggcHggLyBjaGV2cm9uIGxlZnQ8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZyBpZD0iaWNvbi0vLTgtcHgtLy1jaGV2cm9uLWxlZnQiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGUiIHg9IjAiIHk9IjAiIHdpZHRoPSI2IiBoZWlnaHQ9IjgiPjwvcmVjdD4KICAgICAgICA8ZyBpZD0iaWNvbi0vLTgtcHgtLy1jaGV2cm9uLWRvd24iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMuMDAwMDAwLCA0LjAwMDAwMCkgcm90YXRlKDkwLjAwMDAwMCkgdHJhbnNsYXRlKC0zLjAwMDAwMCwgLTQuMDAwMDAwKSB0cmFuc2xhdGUoLTEuMDAwMDAwLCAxLjAwMDAwMCkiIGZpbGw9IiM2RDZFNzEiIGZpbGwtcnVsZT0ibm9uemVybyI+CiAgICAgICAgICAgIDxwb2x5Z29uIGlkPSJQYXRoLUNvcHktMTQiIHBvaW50cz0iNy4zNTAzMTc1NyAwLjY3NTE1ODc4NyA4IDEuMzI0ODQxMjEgNCA1LjMyNDg0MTIxIC00LjEzNDE1NTI0ZS0xNyAxLjMyNDg0MTIxIDAuNjQ5NjgyNDI1IDAuNjc1MTU4Nzg3IDQgNC4wMjU0NzYzNiI+PC9wb2x5Z29uPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==');
+    margin-right: 1.5em;
+  }
+
+  .DayPicker-NavButton--next {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgNiA4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA1NS4xICg3ODEzNikgLSBodHRwczovL3NrZXRjaGFwcC5jb20gLS0+CiAgICA8dGl0bGU+aWNvbiAvIDggcHggLyBjaGV2cm9uIHJpZ2h0PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGcgaWQ9Imljb24tLy04LXB4LS8tY2hldnJvbi1yaWdodCIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHJlY3QgaWQ9IlJlY3RhbmdsZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjYiIGhlaWdodD0iOCI+PC9yZWN0PgogICAgICAgIDxwb2x5Z29uIGlkPSJQYXRoLUNvcHktMTMiIGZpbGw9IiM2RDZFNzEiIGZpbGwtcnVsZT0ibm9uemVybyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMy4wMDAwMDAsIDQuMDAwMDAwKSByb3RhdGUoMjcwLjAwMDAwMCkgdHJhbnNsYXRlKC0zLjAwMDAwMCwgLTQuMDAwMDAwKSAiIHBvaW50cz0iNi4zNTAzMTc1NyAxLjY3NTE1ODc5IDcgMi4zMjQ4NDEyMSAzIDYuMzI0ODQxMjEgLTEgMi4zMjQ4NDEyMSAtMC4zNTAzMTc1NzUgMS42NzUxNTg3OSAzIDUuMDI1NDc2MzYiPjwvcG9seWdvbj4KICAgIDwvZz4KPC9zdmc+Cg==');
   }
 }

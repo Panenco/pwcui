@@ -7,9 +7,9 @@ import { SelectInput } from 'components/form';
 
 import { Icon } from 'components/icon';
 
-const cx = cx_;
 import s from './styles.scss';
 
+const cx = cx_;
 const options: any = [
   { value: 10, label: '10' },
   { value: 25, label: '25' },
@@ -21,11 +21,11 @@ interface Props {
   totalItems?: number;
   onPagination?: () => void;
   perPage?: number;
-  formatUrl?: any,
-  className?: string,
-  perPageLabel?: string,
-  currentPage?: number,
-  disabled?: boolean,
+  formatUrl?: any;
+  className?: string;
+  perPageLabel?: string;
+  currentPage?: number;
+  disabled?: boolean;
 }
 
 const PaginationSelect: React.FunctionComponent<Props> = (props: Props) => {
@@ -37,7 +37,7 @@ const PaginationSelect: React.FunctionComponent<Props> = (props: Props) => {
     className,
     formatUrl = '',
     currentPage = 0,
-    disabled = false
+    disabled = false,
   } = props;
   const from = perPage * currentPage + 1;
   const isFirst = currentPage === 0;

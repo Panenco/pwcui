@@ -9,14 +9,13 @@ import { Card, Row, Col, Text, ContentCard, UploadCard, Icon } from 'index';
 
 import { decorator } from '../../utils/decorator';
 
-const Wrapper = props => (
+const Wrapper = () => (
   <div
     style={{
       backgroundColor: '#F2F2F2',
       padding: '12px',
       marginTop: '30px',
     }}
-    {...props}
   />
 );
 

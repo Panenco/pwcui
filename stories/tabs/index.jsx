@@ -8,13 +8,12 @@ import TableDocs from 'components/table-items/table/table-DOCS.md';
 import { Row, Col, Tabs, TabItem } from 'index';
 import { decorator } from '../../utils/decorator';
 
-const Wrapper = props => (
+const Wrapper = () => (
   <div
     style={{
       backgroundColor: 'white',
       marginTop: '30px',
     }}
-    {...props}
   />
 );
 

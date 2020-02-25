@@ -6,26 +6,26 @@ import ReactMaskInput from 'react-text-mask';
 import s from './styles.scss';
 
 interface Props {
-  className?: string,
-  timeLabel?: string,
-  labelText?: string,
-  inputValue?: string,
-  error?: any,
-  icon?: any,
-  accept?: any,
-  selectedDays?: any,
-  name: string,
-  setFieldValue: (name: string, value: any) => void,
-  onChange: (value: any) => void,
-  title?: string,
-  id?: string,
-  value?: any,
-  disabled?: boolean,
-  isTime?: boolean,
-};
+  className?: string;
+  timeLabel?: string;
+  labelText?: string;
+  inputValue?: string;
+  error?: any;
+  icon?: any;
+  accept?: any;
+  selectedDays?: any;
+  name: string;
+  setFieldValue: (name: string, value: any) => void;
+  onChange: (value: any) => void;
+  title?: string;
+  id?: string;
+  value?: any;
+  disabled?: boolean;
+  isTime?: boolean;
+}
 
 interface State {
-  isOpen: boolean
+  isOpen: boolean;
 }
 
 class DatePicker extends React.Component<Props, State> {
@@ -42,7 +42,7 @@ class DatePicker extends React.Component<Props, State> {
     return this.setState(prevState => ({
       isOpen: !prevState.isOpen,
     }));
-  }
+  };
 
   handleDay = e => {
     this.props.onChange(e);
@@ -57,61 +57,53 @@ class DatePicker extends React.Component<Props, State> {
 
     return (
       <div className={s.day}>
-        {labelText &&
-          <Text
-            size={Text.size.m}
-            color={Text.color.black}
-            font={Text.font.primary}
-            className={s.inputLabelText}
-          >
+        {labelText && (
+          <Text size={Text.size.m} color={Text.color.black} font={Text.font.primary} className={s.inputLabelText}>
             {labelText}
           </Text>
-        }
+        )}
         <TextWithButton
-          iconName='date'
+          iconName="date"
           onClick={this.openHandler}
           className={s.dayInput}
-          readonly='readonly'
+          readonly="readonly"
           value={inputValue}
           error={error}
         />
         {isOpen ? (
           <div className={s.dayPicker}>
-            <DayPicker
-              modifiers={modifiers}
-              onDayClick={this.handleDay}
-              {...this.props}
-            />
-            {isTime && <div className={s.dayPickerFooter}>
-              <div className={s.dayPickerFooterTime}>
-                <Text
-                  size={Text.size.m}
-                  color={Text.color.secondary}
-                  className={s.dayPickerFooterLabel}
-                  weight={Text.weight.lightWeight}
-                >
-                  {timeLabel}
-                </Text>
-                <div className={s.dayPickerFooterWrapperInput}>
-                  <ReactMaskInput
-                    className={s.dayPickerFooterInput}
-                    mask={[/[0-2]/, /[0-9]/, ':', /[0-5]/, /[0-9]/]}
-                    placeholder="--:--"
-                    name="to"
-                  />
-                  <Icon icon={Icon.icons.clock} className={s.dayPickerFooterIcon} />
+            <DayPicker modifiers={modifiers} onDayClick={this.handleDay} {...this.props} />
+            {isTime && (
+              <div className={s.dayPickerFooter}>
+                <div className={s.dayPickerFooterTime}>
+                  <Text
+                    size={Text.size.m}
+                    color={Text.color.secondary}
+                    className={s.dayPickerFooterLabel}
+                    weight={Text.weight.lightWeight}
+                  >
+                    {timeLabel}
+                  </Text>
+                  <div className={s.dayPickerFooterWrapperInput}>
+                    <ReactMaskInput
+                      className={s.dayPickerFooterInput}
+                      mask={[/[0-2]/, /[0-9]/, ':', /[0-5]/, /[0-9]/]}
+                      placeholder="--:--"
+                      name="to"
+                    />
+                    <Icon icon={Icon.icons.clock} className={s.dayPickerFooterIcon} />
+                  </div>
                 </div>
+                <PrimaryButton className={s.dayPickerFooterButton} onClick={this.openHandler}>
+                  Save
+                </PrimaryButton>
               </div>
-              <PrimaryButton className={s.dayPickerFooterButton} onClick={this.openHandler}>
-                Save
-              </PrimaryButton>
-            </div>}
+            )}
           </div>
         ) : null}
       </div>
     );
   }
-
 }
 
 export { DatePicker };
